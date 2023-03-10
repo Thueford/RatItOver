@@ -22,21 +22,10 @@ public class PlayerPhysics : MonoBehaviour
     {
         transform.position = Stage.current.transform.position;
 
-        /* player.inputController.dirAction.started += ctx =>
-        {
-            player.Log("started");
+        player.inputController.dirAction.performed += ctx => {
             moveDir = player.inputController.dirAction.ReadValue<Vector2>();
+            moveDir = new Vector3(moveDir.x, 0, moveDir.y);
         };
-        player.inputController.dirAction.canceled += ctx =>
-        {
-            player.Log("stopped");
-            moveDir = Vector2.zero;
-        };
-        player.inputController.dirAction.performed += ctx =>
-        {
-            player.Log($"perform {ctx.canceled} {ctx.performed} {ctx.started}");
-            moveDir = Vector2.zero;
-        }; */
     }
 
     void Update()

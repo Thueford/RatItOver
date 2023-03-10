@@ -9,7 +9,7 @@ public class CheckpointController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        checkpoints = GameObject.FindGameObjectWithTag("Checkpoint");
+        checkpoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Checkpoint"));
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class CheckpointController : MonoBehaviour
     // Speichert aktuellen Checkpoint
     public void SetCheckpoint(GameObject checkpoint) 
     {
-        PlayerPrefs.SetInt("currentCheckpoint", checkpoint.id);
+        PlayerPrefs.SetInt("currentCheckpoint", checkpoints.IndexOf(checkpoint));
     }
 
     public GameObject GetCheckpoint() 
@@ -33,7 +33,7 @@ public class CheckpointController : MonoBehaviour
         }
         else
         {
-            return GameObject.Find(checkpointId);
+            return checkpoints[checkpointId];
         }
     }
 
