@@ -4,19 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Helper;
 
-[RequireComponent(typeof(InputController))]
+[RequireComponent(typeof(InputController), typeof(PlayerPhysics))]
 public class Player : MonoBehaviour
 {
 
     public static Player player { get; private set; }
-
-
-    // inspector values
-    [NotNull] public int speed;
-    [NotNull] public int jumpHeight;
-
-    internal int jumpGravity = 50, dashGravity = 10;
-    private float jumpYSpeed;
 
     // internal objects
     internal InputController inputController;
@@ -24,6 +16,8 @@ public class Player : MonoBehaviour
     [ReadOnly] public bool grounded; // = !airborne
 
     public Action OnRoundReset = () => { };
+    public Vector3 pos => transform.position;
+
     //public Action OnMatchReset = () => { };
 
     private void RoundReset()
@@ -43,7 +37,7 @@ public class Player : MonoBehaviour
     {
         inputController = GetComponent<InputController>();
 
-        jumpYSpeed = Mathf.Sqrt(2f * jumpGravity * jumpHeight);
+        // jumpYSpeed = Mathf.Sqrt(2f * jumpGravity * jumpHeight);
         player = this;
     }
 

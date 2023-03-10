@@ -12,7 +12,6 @@ public class Pause : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip[] audioClips;
     public Button defaultSelection;
-    public GameObject[] trainingButtons; 
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +19,6 @@ public class Pause : MonoBehaviour
         // uiInputs.cancel.action.performed += (_) => endPause();
         //panel = GetComponent<Image>();
         panel.gameObject.SetActive(false);
-        foreach (var tb in trainingButtons)
-            tb.SetActive(false);
     }
 
     public void enterPause()

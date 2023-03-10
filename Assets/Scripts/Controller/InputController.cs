@@ -22,12 +22,20 @@ public class InputController : MonoBehaviour
     public InputActionMap gameplayActions;
     public Pause pause;
 
+    internal InputAction dirAction;
+    internal InputAction placeAction;
+    internal InputAction resetAction;
+
     
     private void Awake()
     {
         player = GetComponent<Player>();
 
         foreach (var action in gameplayActions) action.Enable();
+
+        dirAction = gameplayActions["Direction"];
+        placeAction = gameplayActions["PlaceBomb"];
+        resetAction = gameplayActions["Reset"];
 
         // moveAction = gameplayActions["Move"];
         // Mouse.current.position
@@ -36,7 +44,6 @@ public class InputController : MonoBehaviour
 
     void OnDisable()
     {
-        InputSystem.onDeviceChange -= SetDevice;
         gameplayActions.Disable();
         gameplayActions.RemoveAllBindingOverrides();
         foreach (var action in gameplayActions)
@@ -45,25 +52,17 @@ public class InputController : MonoBehaviour
 
     private void Start()
     {
-        // SetDevice(InputSystem.devices[0], InputDeviceChange.SoftReset);
         InputSystem.onDeviceChange += SetDevice;
+    }
+
+    private void SetDevice(InputDevice dev, InputDeviceChange ch)
+    {
+        // Debug.Log($"Device {ch}: {dev.name}"); // {Keyboard.current} {Mouse.current}");
+        gameplayActions.devices = new InputDevice[] { Keyboard.current, Mouse.current };
     }
 
     void Update()
     {
         if (skipInput) return;
-    }
-
-    private void SetDevice(InputDevice dev, InputDeviceChange ch)
-    {
-        Debug.Log($"Device {ch}: {dev.name}");
-        StartCoroutine(nameof(UpdateDevice));
-    }
-
-    private IEnumerator UpdateDevice()
-    {
-        yield return null;
-        gameplayActions.devices = new InputDevice[] { Keyboard.current, Mouse.current };        
-        // gameplayActions.devices = new InputDevice[] { player == Player.player1 ? Gamepad.all[0] : Keyboard.current };
     }
 }

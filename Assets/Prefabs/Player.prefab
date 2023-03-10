@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 7097116376284559531}
   - component: {fileID: 6993260019640136912}
   - component: {fileID: 2536614047431521899}
-  - component: {fileID: 2494175006556802438}
+  - component: {fileID: 4128719242215824652}
+  - component: {fileID: 4833795222744182801}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -47,9 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bad122888733454b95d16a6687da9cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  jumpHeight: 7
-  anim: {fileID: 0}
   grounded: 0
 --- !u!114 &2536614047431521899
 MonoBehaviour:
@@ -92,42 +90,10 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    - m_Name: Light
-      m_Type: 1
-      m_ExpectedControlType: Button
-      m_Id: 809be345-be57-4daf-bcf7-8965660ce5cf
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    - m_Name: Medium
-      m_Type: 1
-      m_ExpectedControlType: Button
-      m_Id: 765746f1-69b6-4837-8ab5-6e8a80c87f11
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    - m_Name: Heavy
-      m_Type: 1
-      m_ExpectedControlType: Button
-      m_Id: 9c23d5ab-7c82-41fc-8d62-f5bf21a40989
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
     - m_Name: Reset
       m_Type: 1
       m_ExpectedControlType: Button
       m_Id: 6a304063-f1a4-4bc0-a024-7b6f6ff11c47
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    - m_Name: Throw
-      m_Type: 1
-      m_ExpectedControlType: Button
-      m_Id: aaf75cb1-7b92-4903-8309-f180fccc284e
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -141,54 +107,6 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Bindings:
-    - m_Name: 
-      m_Id: 3e789485-bbb3-4f24-acdb-a2cc6a17e252
-      m_Path: <Keyboard>/q
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: Keyboard&Mouse
-      m_Action: Light
-      m_Flags: 0
-    - m_Name: 
-      m_Id: c1e90685-323d-4ff2-bdeb-0328a00a2467
-      m_Path: <Gamepad>/buttonWest
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: Gamepad
-      m_Action: Light
-      m_Flags: 0
-    - m_Name: 
-      m_Id: f85d2854-6a48-4f29-85fd-60bdac2b5619
-      m_Path: <Keyboard>/o
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Medium
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 62f77cb7-0931-4692-af30-38b21dc90fb7
-      m_Path: <Gamepad>/buttonNorth
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Medium
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 34123813-e29f-49a9-9324-ac3dac68d35f
-      m_Path: <Keyboard>/l
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Heavy
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 17d4e764-5792-4e5a-9b6c-13e23d416b02
-      m_Path: <Gamepad>/buttonEast
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Heavy
-      m_Flags: 0
     - m_Name: 
       m_Id: b2ece0bf-0892-41cb-bcee-608de971c033
       m_Path: <Gamepad>/select
@@ -414,22 +332,6 @@ MonoBehaviour:
       m_Action: SpecialToggle
       m_Flags: 0
     - m_Name: 
-      m_Id: 0ac7f603-6fe3-4246-9009-cddeb7be8a03
-      m_Path: <Keyboard>/f
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Throw
-      m_Flags: 0
-    - m_Name: 
-      m_Id: d210db25-f03d-45df-bf47-3d86e49ec1c0
-      m_Path: <Gamepad>/buttonSouth
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Throw
-      m_Flags: 0
-    - m_Name: 
       m_Id: b70d9f53-77e4-4699-b2fc-aad94cbf09cf
       m_Path: <Keyboard>/escape
       m_Interactions: 
@@ -446,27 +348,34 @@ MonoBehaviour:
       m_Action: Pause
       m_Flags: 0
   pause: {fileID: 0}
---- !u!50 &2494175006556802438
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &4128719242215824652
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7097116376284559529}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a8f8847c9d73a4599ad83ad51853d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &4833795222744182801
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7097116376284559529}
+  serializedVersion: 2
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Constraints: 88
   m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!1 &8416158402885769903
 GameObject:
   m_ObjectHideFlags: 0
