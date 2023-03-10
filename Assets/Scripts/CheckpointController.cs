@@ -5,6 +5,18 @@ using UnityEngine;
 public class CheckpointController : MonoBehaviour
 {
     public List<GameObject> checkpoints = new List<GameObject>();
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        checkpoints = GameObject.FindWithTag("Checkpoint").ToList();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 
     // Speichert aktuellen Checkpoint
     public void SetCheckpoint(GameObject checkpoint) 
@@ -30,19 +42,9 @@ public class CheckpointController : MonoBehaviour
         GameObject checkpoint = GetCheckpoint();
         if (checkpoint != null)
         {
-            PlayerController player = FindObjectOfType
+            PlayerController player = FindObjectOfType<PlayerPhysics>();
+            player.transform.position = checkpoint.transform.position;
         }
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        checkpoints = GameObject.FindWithTag("Checkpoint").ToList();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+
