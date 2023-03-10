@@ -13,6 +13,7 @@ public class ChangeScene : MonoBehaviour
 
     public void btnPressed_Credits()
     {
+        Debug.Log("Credits");
         SceneManager.LoadScene("CreditScene");
     }
 
