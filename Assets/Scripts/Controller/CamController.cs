@@ -19,7 +19,8 @@ public class CamController : MonoBehaviour
     public int remainingShakeFrames = 0; // TODO: Convert to Duration
     [SerializeField, Range(0f, 1f)]
     private float shakeIntensity = 0.08f;
-    private Vector3 stablePosition;
+    private Vector3 pos;
+    private Vector3 relPos;
 
     public float maxDist => zmax * 2;
 
@@ -30,29 +31,10 @@ public class CamController : MonoBehaviour
 
     private void Start()
     {
-        stablePosition = transform.position;
-        InvokeRepeating(nameof(changeFramerate), 1f, 1f);
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = targetFPS;
+        pos = transform.position;
+        relPos = pos - Player.player.pos;
         Time.fixedDeltaTime = 1f / targetFPS;
     }
-
-    void changeFramerate()
-    {
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = targetFPS;
-        Time.fixedDeltaTime = 1f / targetFPS;
-    }
-
-    // private void LateUpdate() {   
-    //     var dt = Time.unscaledDeltaTime;
-    //     var targetDeltaTime = 1 / targetFPS;
-    //     if (dt > targetDeltaTime) {
-    //         Time.timeScale = targetDeltaTime / dt;
-    //         Debug.Log(Time.timeScale);
-    //         if (Time.timeScale == 0) Time.timeScale = 1;
-    //     }
-    // }
 
     private void Update()
     {
@@ -64,21 +46,17 @@ public class CamController : MonoBehaviour
             t += target.transform.position;
         t /= targets.Length;
 
-        Vector3 dir = t - stablePosition;
-        dir.z = dir.y = 0;
-        dir += transform.forward * zmax;
+        Vector3 dir = t - pos + relPos;
+        dir.z = 0;
+        pos += dir / lazyness;
 
-        Vector3 pos = stablePosition + dir / lazyness;
-        stablePosition = pos;
+        Vector3 shakePos = pos;
         if (remainingShakeFrames > 0 && !GameController.self.isHitlag)
         {
-            pos += new Vector3(UnityEngine.Random.value - 0.5f,
-                               UnityEngine.Random.value - 0.5f,
-                               0).normalized * shakeIntensity;
+            shakePos += shakeIntensity * new Vector3(Random.value - 0.5f, Random.value - 0.5f, 0).normalized;
             --remainingShakeFrames;
         }
-
-        transform.position = pos;
+        transform.position = shakePos;
     }
 
     public void ScreenShake(int duration)
