@@ -9,7 +9,7 @@ public class CheckpointController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        checkpoints = GameObject.FindWithTag("Checkpoint").ToList();
+        checkpoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Checkpoint"));
     }
 
     // Update is called once per frame
@@ -21,19 +21,19 @@ public class CheckpointController : MonoBehaviour
     // Speichert aktuellen Checkpoint
     public void SetCheckpoint(GameObject checkpoint) 
     {
-        PlayerPref.SetInt("currentCheckpoint", checkpoint.id);
+        PlayerPrefs.SetInt("currentCheckpoint", checkpoints.IndexOf(checkpoint));
     }
 
     public GameObject GetCheckpoint() 
     {
-        int checkpointId = PlayerPref.GetInt("currentCheckpoint", -1);
+        int checkpointId = PlayerPrefs.GetInt("currentCheckpoint", -1);
         if (checkpointId == -1) 
         {
             return null;
         }
         else
         {
-            return GameObject.Find(checkpointId);
+            return checkpoints[checkpointId];
         }
     }
 
@@ -42,7 +42,7 @@ public class CheckpointController : MonoBehaviour
         GameObject checkpoint = GetCheckpoint();
         if (checkpoint != null)
         {
-            PlayerController player = FindObjectOfType<PlayerPhysics>();
+            PlayerPhysics player = FindObjectOfType<PlayerPhysics>();
             player.transform.position = checkpoint.transform.position;
         }
     }
