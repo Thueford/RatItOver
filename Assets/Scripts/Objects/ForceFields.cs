@@ -6,9 +6,8 @@ public class ForceFields : MonoBehaviour
 {
 
     public float power = 1;
-    public float length = 1;
-    public float height = 1;
-    public float width = 1;
+    public Vector3 size = new Vector3(1, 1, 1);
+    public float windspeed = 5;
     public Vector3 direction = new Vector3(0,0,0);
 
     private Collider collider;
@@ -22,14 +21,21 @@ public class ForceFields : MonoBehaviour
         collider.isTrigger = true;
         ps = GetComponent<ParticleSystem>();
         ps.Play();
-        transform.localScale = new Vector3(length,height,width);
-        ps.transform.localScale = new Vector3(length, height, width);
+        transform.localScale = size;
+        ps.transform.localScale = size;
+        var m = ps.main;
+        m.startSpeed = windspeed;
+        m.startLifetime = transform.localScale.x / m.startSpeed.constant;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.localScale = size;
+        ps.transform.localScale = size;
+        var m = ps.main;
+        m.startSpeed = windspeed;
+        m.startLifetime = transform.localScale.x / m.startSpeed.constant;
     }
 
     private void OnTriggerEnter(Collider other)
