@@ -8,10 +8,8 @@ public class Prefabs : MonoBehaviour
 {
     public static Prefabs self;
     [NotNull] public GameObject spark;
+    [NotNull] public Bomb bomb;
     public bool triggerSparks = false;
 
     void Awake() => self = this;
-
-    private void Update() {
-    }
 }

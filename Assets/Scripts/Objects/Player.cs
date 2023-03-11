@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using static Helper;
 
 [RequireComponent(typeof(InputController), typeof(PlayerPhysics))]
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour
 
     // internal objects
     internal InputController inputController;
+    public GameObject holdBomb;
 
     [ReadOnly] public bool grounded; // = !airborne
     public float speed = 4, jumpHeight = 6;
@@ -20,6 +22,7 @@ public class Player : MonoBehaviour
     public PlayerPhysics physics;
     public Collider coll;
     public Vector3 pos => transform.position;
+    Vector2 bombDir;
 
     //public Action OnMatchReset = () => { };
 
@@ -49,14 +52,41 @@ public class Player : MonoBehaviour
     private void Start()
     {
         GameController.self.OnReset += Reset;
+
+        inputController.dirAction.performed += ctx =>
+            bombDir = ctx.ReadValue<Vector2>();
+        inputController.placeAction.performed += ctx => ThrowBomb();
     }
 
     void Update()
     {
+        if (grounded)
+        {
+            if (!player.inputController.dirAction.IsPressed())
+            {
+                Vector2 pos = CamController.cam.WorldToScreenPoint(player.pos);
+                Vector2 dir = Mouse.current.position.ReadValue() - pos;
+                bombDir = dir.normalized;
+                ShowBomb();
+            }
+        }
+
         // if (Pause.pause == anim.enabled) anim.enabled = !Pause.pause;
         if (GameController.self.isHitlag || GameController.freeze) return;
     }
     #endregion
+
+    void ShowBomb()
+    {
+        Debug.DrawRay(pos, 2 * (Vector3)bombDir, Color.red);
+        holdBomb.transform.position = pos + 0.5f * (Vector3)bombDir;
+    }
+
+    void ThrowBomb()
+    {
+        Bomb bomb = Instantiate(Prefabs.self.bomb, pos + 0.5f * (Vector3)bombDir, Quaternion.identity);
+        bomb.dir = bombDir;
+    }
 
     #region Actions
 
