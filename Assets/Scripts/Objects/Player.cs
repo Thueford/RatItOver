@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using static Helper;
 
 [RequireComponent(typeof(InputController), typeof(PlayerPhysics))]
@@ -12,14 +13,17 @@ public class Player : MonoBehaviour
 
     // internal objects
     internal InputController inputController;
+    public GameObject holdBomb;
+    public GameObject rat;
 
     [ReadOnly] public bool grounded; // = !airborne
     public float speed = 4, jumpHeight = 6;
 
-    public Action OnRoundReset = () => { };
-    public PlayerPhysics physics;
-    public Collider coll;
-    public Vector3 pos => transform.position;
+    internal Action OnRoundReset = () => { };
+    internal PlayerPhysics physics;
+    internal Collider coll;
+    internal Vector3 pos => transform.position;
+    Vector2 bombDir;
 
     // for checkpoints
     private Vector3 respawnPoint;
@@ -55,6 +59,10 @@ public class Player : MonoBehaviour
     {
         GameController.self.OnReset += Reset;
 
+        inputController.dirAction.performed += ctx =>
+            bombDir = ctx.ReadValue<Vector2>();
+        inputController.placeAction.performed += ctx => ThrowBomb();
+
         // for checkpoints
         respawnPoint = transform.position;
         checkpoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Checkpoint"));
@@ -62,10 +70,36 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (grounded)
+        {
+            if (!player.inputController.dirAction.IsPressed())
+            {
+                Vector2 pos = CamController.cam.WorldToScreenPoint(player.pos);
+                Vector2 dir = Mouse.current.position.ReadValue() - pos;
+                bombDir = dir.normalized;
+                ShowBomb();
+            }
+        }
+
         // if (Pause.pause == anim.enabled) anim.enabled = !Pause.pause;
+        setFallDetectorPos();
         if (GameController.self.isHitlag || GameController.freeze) return;
     }
     #endregion
+
+    void ShowBomb()
+    {
+        Debug.DrawRay(pos, 2 * (Vector3)bombDir, Color.red);
+        float ang = -Vector2.SignedAngle(bombDir, Vector2.down);
+        rat.transform.rotation = Quaternion.Euler(0, 0, ang);
+        // holdBomb.transform.position = pos + 0.5f * (Vector3)bombDir;
+    }
+
+    void ThrowBomb()
+    {
+        Bomb bomb = Instantiate(Prefabs.self.bomb, pos + 0.5f * (Vector3)bombDir, Quaternion.identity);
+        bomb.dir = bombDir;
+    }
 
     #region Actions
 
@@ -111,8 +145,18 @@ public class Player : MonoBehaviour
                     if (cp.GetComponent<Checkpoint>().id < currentId) cp.GetComponent<Checkpoint>().activateCheckpoint();
                 }
                 checkpoint.activateCheckpoint();
+                fallDetector.transform.position = new Vector2(transform.position.x, checkpoint.transform.position.y - 10);
                 respawnPoint = collision.transform.position;
             }
         }
+    }
+    
+    private void setFallDetectorPos() {
+        float currPosDetector_Y = fallDetector.transform.position.y;
+        float currPosPlayer_Y = transform.position.y;
+        float minY = currPosPlayer_Y - 30f; // untere Grenze für Y-Position des FallDetectors
+        float maxY = currPosPlayer_Y + 10f; // obere Grenze für Y-Position des FallDetectors
+        float newY = Mathf.Clamp(currPosDetector_Y, minY, maxY); // klemmt die Y-Position auf den Bereich zwischen minY und maxY
+        fallDetector.transform.position = new Vector2(transform.position.x, newY);
     }
 }
