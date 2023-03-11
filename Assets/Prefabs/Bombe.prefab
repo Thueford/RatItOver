@@ -146,9 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b26954c8cda7dc643a8f94b8d6adccde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwHeight: 5
-  strength: 10
-  radius: 10
+  throwHeight: 3
+  strength: 6
+  radius: 6
 --- !u!135 &3465642705920823305
 SphereCollider:
   m_ObjectHideFlags: 0

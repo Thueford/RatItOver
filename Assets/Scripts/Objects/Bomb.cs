@@ -29,7 +29,7 @@ public class Bomb : MonoBehaviour
     void StarteMegaFetteExplosion()
     {
         Bounds b = GetComponent<Collider>().bounds;
-        Vector2 force = Player.player.pos - (b.center - b.extents.y * Vector3.up);
+        Vector2 force = Player.player.rat.transform.position - (b.center - b.extents.y * Vector3.up);
         float radiusSq = radius * radius;
         Destroy(gameObject, 0);
         Instantiate(Prefabs.self.explosion, transform.position, Quaternion.identity);
