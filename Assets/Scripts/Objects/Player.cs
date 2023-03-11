@@ -57,15 +57,20 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        GameController.self.OnReset += Reset;
 
-        inputController.dirAction.performed += ctx =>
-            bombDir = ctx.ReadValue<Vector2>();
-        inputController.placeAction.performed += ctx => ThrowBomb();
+        //
+        GameController.self.OnReset += Reset;
 
         // for checkpoints
         respawnPoint = transform.position;
         checkpoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Checkpoint"));
+        Debug.Log("Get all Checkpoint in Lvl");
+
+        //
+        inputController.dirAction.performed += ctx =>
+            bombDir = ctx.ReadValue<Vector2>();
+        inputController.placeAction.performed += ctx => ThrowBomb();
+
     }
 
     void Update()
@@ -132,7 +137,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter(Collider collision) 
     {
-        Debug.Log("Collision");
+        Debug.Log("Collision" + collision.tag);
         if (collision.CompareTag("FallDetector")) {
             Debug.Log("Collision: FallDetector");
             transform.position = respawnPoint;
