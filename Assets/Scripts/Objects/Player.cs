@@ -57,8 +57,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-
-        //
         GameController.self.OnReset += Reset;
 
         // for checkpoints
@@ -66,11 +64,9 @@ public class Player : MonoBehaviour
         checkpoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Checkpoint"));
         Debug.Log("Get all Checkpoint in Lvl");
 
-        //
         inputController.dirAction.performed += ctx =>
             bombDir = ctx.ReadValue<Vector2>();
         inputController.placeAction.performed += ctx => ThrowBomb();
-
     }
 
     void Update()
