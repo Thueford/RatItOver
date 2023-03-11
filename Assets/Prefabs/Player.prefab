@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6490614233584608896}
   - component: {fileID: 5066997759621875836}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ratte_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1983562084526570673}
   - component: {fileID: 8341792755500933519}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ratte_schaut_aus_Eimer_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 2536614047431521899}
   - component: {fileID: 4128719242215824652}
   - component: {fileID: 4833795222744182801}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,6 +225,8 @@ MonoBehaviour:
   grounded: 0
   speed: 8
   jumpHeight: 6
+  fallDetector: {fileID: 0}
+  checkpoints: []
 --- !u!114 &2536614047431521899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,7 +564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 568369140306932322}
   - component: {fileID: 152939659701111163}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Eimer_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +651,7 @@ GameObject:
   - component: {fileID: 2548551494458594922}
   - component: {fileID: 6849044012317601889}
   - component: {fileID: 2258925133056900994}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -756,7 +758,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1113067620527789736}
   - component: {fileID: 3127835089129563051}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bombe_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

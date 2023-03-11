@@ -26,7 +26,7 @@ public class PlayerPhysics : MonoBehaviour
     void Start()
     {
         transform.position = Stage.current.transform.position;
-        jumpYSpeed = Mathf.Sqrt(-2f * Physics.gravity.y * Player.player.jumpHeight);
+        jumpYSpeed = Helper.GetJumpSpeed(Player.player.jumpHeight);
 
         player.inputController.moveAction.performed += ctx =>
         {

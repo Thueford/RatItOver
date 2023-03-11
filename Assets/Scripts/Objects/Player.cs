@@ -82,6 +82,7 @@ public class Player : MonoBehaviour
         }
 
         // if (Pause.pause == anim.enabled) anim.enabled = !Pause.pause;
+        setFallDetectorPos();
         if (GameController.self.isHitlag || GameController.freeze) return;
     }
     #endregion
@@ -144,8 +145,18 @@ public class Player : MonoBehaviour
                     if (cp.GetComponent<Checkpoint>().id < currentId) cp.GetComponent<Checkpoint>().activateCheckpoint();
                 }
                 checkpoint.activateCheckpoint();
+                fallDetector.transform.position = new Vector2(transform.position.x, checkpoint.transform.position.y - 10);
                 respawnPoint = collision.transform.position;
             }
         }
+    }
+    
+    private void setFallDetectorPos() {
+        float currPosDetector_Y = fallDetector.transform.position.y;
+        float currPosPlayer_Y = transform.position.y;
+        float minY = currPosPlayer_Y - 30f; // untere Grenze für Y-Position des FallDetectors
+        float maxY = currPosPlayer_Y + 10f; // obere Grenze für Y-Position des FallDetectors
+        float newY = Mathf.Clamp(currPosDetector_Y, minY, maxY); // klemmt die Y-Position auf den Bereich zwischen minY und maxY
+        fallDetector.transform.position = new Vector2(transform.position.x, newY);
     }
 }
