@@ -57,15 +57,20 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        GameController.self.OnReset += Reset;
 
-        inputController.dirAction.performed += ctx =>
-            bombDir = ctx.ReadValue<Vector2>();
-        inputController.placeAction.performed += ctx => ThrowBomb();
+        //
+        GameController.self.OnReset += Reset;
 
         // for checkpoints
         respawnPoint = transform.position;
         checkpoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Checkpoint"));
+        Debug.Log("Get all Checkpoint in Lvl");
+
+        //
+        inputController.dirAction.performed += ctx =>
+            bombDir = ctx.ReadValue<Vector2>();
+        inputController.placeAction.performed += ctx => ThrowBomb();
+
     }
 
     void Update()
@@ -74,7 +79,7 @@ public class Player : MonoBehaviour
         {
             if (!player.inputController.dirAction.IsPressed())
             {
-                Vector2 pos = CamController.cam.WorldToScreenPoint(player.pos);
+                Vector2 pos = CamController.cam.WorldToScreenPoint(rat.transform.position);
                 Vector2 dir = Mouse.current.position.ReadValue() - pos;
                 bombDir = dir.normalized;
                 ShowBomb();
@@ -97,8 +102,8 @@ public class Player : MonoBehaviour
 
     void ThrowBomb()
     {
-        Bomb bomb = Instantiate(Prefabs.self.bomb, pos + 0.5f * (Vector3)bombDir, Quaternion.identity);
-        bomb.dir = bombDir;
+        Bomb bomb = Instantiate(Prefabs.self.bomb, rat.transform.position + 0.5f * (Vector3)bombDir, Quaternion.identity);
+        bomb.dir = bombDir - (Vector2)physics.rb.velocity / Physics.gravity.y;
     }
 
     #region Actions
@@ -133,11 +138,13 @@ public class Player : MonoBehaviour
     void OnTriggerEnter(Collider collision) 
     {
         Debug.Log("Collision");
-        if (collision.CompareTag("FallDetector")) {
+        if (collision.CompareTag("FallDetector"))
+        {
             Debug.Log("Collision: FallDetector");
             transform.position = respawnPoint;
         }
-        else if (collision.CompareTag("Checkpoint")) {
+        else if (collision.CompareTag("Checkpoint"))
+        {
             Checkpoint checkpoint = collision.GetComponent<Checkpoint>();
             if (!checkpoint.isActive()) {
                 int currentId = checkpoint.id;
@@ -150,7 +157,8 @@ public class Player : MonoBehaviour
         }
     }
     
-    private void setFallDetectorPos() {
+    private void setFallDetectorPos()
+    {
         float currPosDetector_Y = fallDetector.transform.position.y;
         float currPosPlayer_Y = transform.position.y;
         float minY = currPosPlayer_Y - 30f; // untere Grenze für Y-Position des FallDetectors

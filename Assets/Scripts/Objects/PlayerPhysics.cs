@@ -64,11 +64,7 @@ public class PlayerPhysics : MonoBehaviour
             for (int i = 0; i < c.contactCount; i++)
                 n += c.GetContact(i).normal;
 
-            if (Vector3.Angle(Vector3.up, n) < 45)
-            {
-                grounded = true;
-                Debug.Log("Grounded 1");
-            }
+            if (Vector3.Angle(Vector3.up, n) < 45) grounded = true;
         }
     }
 }

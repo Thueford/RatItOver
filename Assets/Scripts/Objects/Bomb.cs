@@ -28,16 +28,15 @@ public class Bomb : MonoBehaviour
 
     void StarteMegaFetteExplosion()
     {
-        UnityEngine.Debug.Log("Das ist eine Mega Fette Explosion");
         Bounds b = GetComponent<Collider>().bounds;
-        Vector2 force = Player.player.pos - (b.center - b.extents.y * Vector3.up);
+        Vector2 force = Player.player.rat.transform.position - (b.center - b.extents.y * Vector3.up);
         float radiusSq = radius * radius;
         Destroy(gameObject, 0);
+        Instantiate(Prefabs.self.explosion, transform.position, Quaternion.identity);
         if (force.sqrMagnitude > radiusSq) return;
 
         float f = (radiusSq - force.sqrMagnitude) / radiusSq;
         force = Helper.GetJumpSpeed(strength) * f * force.normalized;
         Player.player.physics.rb.AddForce(force, ForceMode.VelocityChange);
-        Instantiate(Prefabs.self.explosion, transform.position, Quaternion.identity);
     }
 }

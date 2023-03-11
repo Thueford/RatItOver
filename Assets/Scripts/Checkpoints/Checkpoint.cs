@@ -10,11 +10,13 @@ public class Checkpoint : MonoBehaviour
     Animator anim;
 
     void Start() {
+        Debug.Log("Checkpoint init");
         anim = GetComponent<Animator>();
         anim.enabled = false;
     }
     public void activateCheckpoint() 
     {
+        Debug.Log("Activate Checkpoint");
         activated = true;
         anim.enabled = true;
     }

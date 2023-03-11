@@ -176,9 +176,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3542392498140443586}
   - component: {fileID: 4589044239295821006}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: House_ExtraFloor
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
