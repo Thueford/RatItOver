@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    public GameObject cc;
-    private bool activated = true;
+    public int id;
+    private bool activated = false;
 
-    void OnTriggerEnter(Collider other) {
-        Debug.Log("Collision " + other.tag);
-        if (activated) {
-            if (other.CompareTag("Player")) {
-                activated = false;
-                Debug.Log("Collision with Player");
-                cc.GetComponent<CheckpointController>().ActivateCheckpoint(gameObject);
-                Debug.Log("lastCheckPointPosition:");
-            }  
-        }
-        
+    public void activateCheckpoint() {
+        activated = true;
+    }
+
+    public bool isActive() {
+        return activated;
     }
 }

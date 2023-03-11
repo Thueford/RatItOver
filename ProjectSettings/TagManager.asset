@@ -10,6 +10,7 @@ TagManager:
   - Floor
   - Checkpoint
   - CheckpointController
+  - FallDetector
   layers:
   - Default
   - TransparentFX
