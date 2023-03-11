@@ -25,6 +25,11 @@ public class Player : MonoBehaviour
     internal Vector3 pos => transform.position;
     Vector2 bombDir;
 
+    // for checkpoints
+    private Vector3 respawnPoint;
+    public GameObject fallDetector;
+    public List<GameObject> checkpoints = new List<GameObject>();
+
     //public Action OnMatchReset = () => { };
 
     private void RoundReset()
@@ -57,6 +62,10 @@ public class Player : MonoBehaviour
         inputController.dirAction.performed += ctx =>
             bombDir = ctx.ReadValue<Vector2>();
         inputController.placeAction.performed += ctx => ThrowBomb();
+
+        // for checkpoints
+        respawnPoint = transform.position;
+        checkpoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Checkpoint"));
     }
 
     void Update()
@@ -118,5 +127,25 @@ public class Player : MonoBehaviour
         foreach (var arg in args)
             log += " " + arg.ToString();
         Debug.Log(log);
+    }
+
+    void OnTriggerEnter(Collider collision) 
+    {
+        Debug.Log("Collision");
+        if (collision.CompareTag("FallDetector")) {
+            Debug.Log("Collision: FallDetector");
+            transform.position = respawnPoint;
+        }
+        else if (collision.CompareTag("Checkpoint")) {
+            Checkpoint checkpoint = collision.GetComponent<Checkpoint>();
+            if (!checkpoint.isActive()) {
+                int currentId = checkpoint.id;
+                foreach (GameObject cp in checkpoints) {
+                    if (cp.GetComponent<Checkpoint>().id < currentId) cp.GetComponent<Checkpoint>().activateCheckpoint();
+                }
+                checkpoint.activateCheckpoint();
+                respawnPoint = collision.transform.position;
+            }
+        }
     }
 }
