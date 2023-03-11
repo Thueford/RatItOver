@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
         inputController.placeAction.performed += ctx => ThrowBomb();
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (Bomb.tLastExpl > 0 && Time.time - Bomb.tLastExpl >= bombTimeout) holdBomb.SetActive(true);
         if (grounded)
