@@ -809,6 +809,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3191166938369455598, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191166938369455598, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3982230368145567187, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_Name
       value: GameStage
@@ -875,31 +883,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7483468052478287651, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.3385012
+      value: 0.46923432
       objectReference: {fileID: 0}
     - target: {fileID: 7483468052478287651, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.9046709
+      value: 0.8442936
       objectReference: {fileID: 0}
     - target: {fileID: 7483468052478287651, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.25876504
+      value: -0.25509933
       objectReference: {fileID: 0}
     - target: {fileID: 7483468052478287651, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0053149033
+      value: -0.043725688
       objectReference: {fileID: 0}
     - target: {fileID: 7483468052478287651, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 37.569
+      value: 50.357
       objectReference: {fileID: 0}
     - target: {fileID: 7483468052478287651, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -166.517
+      value: -150.596
       objectReference: {fileID: 0}
     - target: {fileID: 7483468052478287651, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -143.471
+      value: -132.313
       objectReference: {fileID: 0}
     - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_Color.b
@@ -927,7 +935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7928519457098112654, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_CastShadows
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7928519457098112654, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_MotionVectors
