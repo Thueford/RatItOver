@@ -674,11 +674,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c954d1e182b024ba078058f8a387ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1871201468 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 235331606899243250, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
-  m_PrefabInstance: {fileID: 1079252623}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1910363509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1934,63 +1929,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7097116376284559529, guid: 13844089149ebad449ee3e094de8d51d, type: 3}
   m_PrefabInstance: {fileID: 1910363509}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1947906677
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1871201468}
-    m_Modifications:
-    - target: {fileID: 3748066365208641399, guid: 233f9e8e323fc5a43ba434118082a60d, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3748066365208641399, guid: 233f9e8e323fc5a43ba434118082a60d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3748066365208641399, guid: 233f9e8e323fc5a43ba434118082a60d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3748066365208641399, guid: 233f9e8e323fc5a43ba434118082a60d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3748066365208641399, guid: 233f9e8e323fc5a43ba434118082a60d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3748066365208641399, guid: 233f9e8e323fc5a43ba434118082a60d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3748066365208641399, guid: 233f9e8e323fc5a43ba434118082a60d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3748066365208641399, guid: 233f9e8e323fc5a43ba434118082a60d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3748066365208641399, guid: 233f9e8e323fc5a43ba434118082a60d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3748066365208641399, guid: 233f9e8e323fc5a43ba434118082a60d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3748066365208641399, guid: 233f9e8e323fc5a43ba434118082a60d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3748066365208641401, guid: 233f9e8e323fc5a43ba434118082a60d, type: 3}
-      propertyPath: m_Name
-      value: Platform (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 233f9e8e323fc5a43ba434118082a60d, type: 3}
+--- !u!114 &1910363514 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6993260019640136912, guid: 13844089149ebad449ee3e094de8d51d, type: 3}
+  m_PrefabInstance: {fileID: 1910363509}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910363510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bad122888733454b95d16a6687da9cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2745062580949041281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2001,7 +1950,7 @@ PrefabInstance:
     - target: {fileID: -2871038482909672352, guid: 8a0b41314c3161d4497aed2a17e14833, type: 3}
       propertyPath: player1
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1910363514}
     - target: {fileID: -2871038482909672352, guid: 8a0b41314c3161d4497aed2a17e14833, type: 3}
       propertyPath: player2
       value: 

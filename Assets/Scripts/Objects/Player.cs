@@ -14,14 +14,15 @@ public class Player : MonoBehaviour
     // internal objects
     internal InputController inputController;
     public GameObject holdBomb;
+    public GameObject rat;
 
     [ReadOnly] public bool grounded; // = !airborne
     public float speed = 4, jumpHeight = 6;
 
-    public Action OnRoundReset = () => { };
-    public PlayerPhysics physics;
-    public Collider coll;
-    public Vector3 pos => transform.position;
+    internal Action OnRoundReset = () => { };
+    internal PlayerPhysics physics;
+    internal Collider coll;
+    internal Vector3 pos => transform.position;
     Vector2 bombDir;
 
     //public Action OnMatchReset = () => { };
@@ -79,7 +80,9 @@ public class Player : MonoBehaviour
     void ShowBomb()
     {
         Debug.DrawRay(pos, 2 * (Vector3)bombDir, Color.red);
-        holdBomb.transform.position = pos + 0.5f * (Vector3)bombDir;
+        float ang = -Vector2.SignedAngle(bombDir, Vector2.down);
+        rat.transform.rotation = Quaternion.Euler(0, 0, ang);
+        // holdBomb.transform.position = pos + 0.5f * (Vector3)bombDir;
     }
 
     void ThrowBomb()

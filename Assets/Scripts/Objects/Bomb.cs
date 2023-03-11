@@ -12,7 +12,7 @@ public class Bomb : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        // ArrayList GetComponents<SphereCollider>().
     }
 
     // Update is called once per frame
