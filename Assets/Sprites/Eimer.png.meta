@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f13fdd44c703a9f4ab2b441476f4c43d
+guid: 4832d3b56c7b6cb42b12d025a95b8a50
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,18 +102,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -129,22 +117,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bombe_2
+      name: Eimer_1
       rect:
         serializedVersion: 2
-        x: 196
-        y: 74
-        width: 442
-        height: 528
-      alignment: 9
-      pivot: {x: 0.44, y: 0.33}
+        x: 468
+        y: 228
+        width: 1045
+        height: 1212
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ee4735bb4d635f46b90da7a2f5b6e9f
-      internalID: 82727129
+      spriteID: 2b6c602c9eb7b14429cedfd5bbce7ae0
+      internalID: 1480175786
       vertices: []
       indices: 
       edges: []
@@ -152,7 +140,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ee7e3a742b1d660418c6c13dcda4a6ae
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -160,9 +148,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bombe_2: 82727129
-      Bombe_1: 407116604
-      Bombe_0: 960605026
+      Eimer_1: 1480175786
+      Eimer_0: 1683633067
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

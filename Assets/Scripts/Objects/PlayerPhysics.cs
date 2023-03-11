@@ -12,7 +12,7 @@ public class PlayerPhysics : MonoBehaviour
     public static Player player => Player.player;
     public Rigidbody rb { get; private set; }
 
-    Vector2 moveDir, bombDir;
+    Vector2 moveDir;
     bool grounded = true;
     float jumpYSpeed;
     Vector3 pos => transform.position;
@@ -33,11 +33,6 @@ public class PlayerPhysics : MonoBehaviour
             moveDir = ctx.ReadValue<Vector2>();
             if (moveDir.y > 0 && grounded) Jump();
         };
-
-        player.inputController.dirAction.performed += ctx =>
-        {
-            bombDir = ctx.ReadValue<Vector2>();
-        };
     }
 
     void Jump()
@@ -54,23 +49,8 @@ public class PlayerPhysics : MonoBehaviour
         if (moveDir.x != 0) vel.x = player.speed * moveDir.x;
 
         rb.velocity = vel;
-        rb.AddForce(-vel.x, 0, 0);
-
-        if (grounded)
-        {
-            if (!player.inputController.dirAction.IsPressed())
-            {
-                Vector2 pos = CamController.cam.WorldToScreenPoint(player.pos);
-                Vector2 dir = Mouse.current.position.ReadValue() - pos;
-                bombDir = dir.normalized;
-            }
-            ShowBombDir();
-        }
-    }
-
-    void ShowBombDir()
-    {
-        Debug.DrawRay(pos, 2 * (Vector3)bombDir, Color.red);
+        rb.AddForce(-4*vel.x, 0, 0);
+        
         Debug.DrawRay(pos, 2 * (Vector3)moveDir, Color.green);
     }
 
