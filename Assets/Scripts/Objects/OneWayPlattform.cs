@@ -23,6 +23,7 @@ public class OneWayPlattform : MonoBehaviour
         
     }
 
+
     private void OnTriggerExit(Collider other)
     {
         if (other.transform.position.y > up * transform.position.y)
