@@ -53,6 +53,8 @@ public class PlayerPhysics : MonoBehaviour
         this.gameObject.transform.position = tmp;
 
         if (moveDir.x != 0) vel.x = player.speed * moveDir.x;
+        float maxSpd = Helper.GetJumpSpeed(10);
+        if (vel.sqrMagnitude > maxSpd*maxSpd) vel = maxSpd * vel.normalized;
 
         rb.velocity = vel;
         if (flying) rb.AddForce(-vel.x/2, 0, 0);
