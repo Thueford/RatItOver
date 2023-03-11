@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
 
     void ThrowBomb()
     {
-        Bomb bomb = Instantiate(Prefabs.self.bomb, pos + 0.5f * (Vector3)bombDir, Quaternion.identity);
+        Bomb bomb = Instantiate(Prefabs.self.bomb, rat.transform.position + 0.5f * (Vector3)bombDir, Quaternion.identity);
         bomb.dir = bombDir - (Vector2)physics.rb.velocity / Physics.gravity.y;
     }
 
@@ -137,12 +137,14 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter(Collider collision) 
     {
-        Debug.Log("Collision" + collision.tag);
-        if (collision.CompareTag("FallDetector")) {
+        Debug.Log("Collision");
+        if (collision.CompareTag("FallDetector"))
+        {
             Debug.Log("Collision: FallDetector");
             transform.position = respawnPoint;
         }
-        else if (collision.CompareTag("Checkpoint")) {
+        else if (collision.CompareTag("Checkpoint"))
+        {
             Checkpoint checkpoint = collision.GetComponent<Checkpoint>();
             if (!checkpoint.isActive()) {
                 int currentId = checkpoint.id;
@@ -155,7 +157,8 @@ public class Player : MonoBehaviour
         }
     }
     
-    private void setFallDetectorPos() {
+    private void setFallDetectorPos()
+    {
         float currPosDetector_Y = fallDetector.transform.position.y;
         fallDetector.transform.position = new Vector2(transform.position.x, currPosDetector_Y);
     }
