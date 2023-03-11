@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    public float speed, strength, radius;
+    public float throwHeight, strength, radius;
     internal Vector3 dir;
 
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class Bomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += speed * dir * Time.deltaTime;
+        transform.position += Helper.GetJumpSpeed(throwHeight) * dir * Time.deltaTime;
     }
 
     void OnCollisionEnter(Collision collision)
@@ -29,8 +29,10 @@ public class Bomb : MonoBehaviour
     void StarteMegaFetteExplosion()
     {
         UnityEngine.Debug.Log("Das ist eine Mega Fette Explosion");
-        Vector2 force = Player.player.pos - transform.position;
+        Bounds b = GetComponent<Collider>().bounds;
+        Vector2 force = Player.player.pos - (b.center - b.extents.y * Vector3.up);
         float radiusSq = radius * radius;
+        Destroy(gameObject, 0);
         if (force.sqrMagnitude > radiusSq) return;
 
         float f = (radiusSq - force.sqrMagnitude) / radiusSq;

@@ -18,9 +18,9 @@ TagManager:
   - Pixel
   - Water
   - UI
-  - PhysicsCollider
-  - Hitbox
-  - Hurtbox
+  - Walls
+  - Player
+  - Bomb
   - 
   - 
   - 
