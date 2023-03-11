@@ -12,7 +12,7 @@ public class Bomb : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // ArrayList GetComponents<SphereCollider>().
+        System.Array.Find(GetComponents<SphereCollider>(), o => o.isTrigger);
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class Bomb : MonoBehaviour
         if (force.sqrMagnitude > radiusSq) return;
 
         float f = (radiusSq - force.sqrMagnitude) / radiusSq;
-        force = strength * f * force.normalized;
+        force = Helper.GetJumpSpeed(strength) * f * force.normalized;
         Player.player.physics.rb.AddForce(force, ForceMode.VelocityChange);
     }
 }
