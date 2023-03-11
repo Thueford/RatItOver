@@ -157,10 +157,6 @@ public class Player : MonoBehaviour
     
     private void setFallDetectorPos() {
         float currPosDetector_Y = fallDetector.transform.position.y;
-        float currPosPlayer_Y = transform.position.y;
-        float minY = currPosPlayer_Y - 30f; // untere Grenze für Y-Position des FallDetectors
-        float maxY = currPosPlayer_Y + 10f; // obere Grenze für Y-Position des FallDetectors
-        float newY = Mathf.Clamp(currPosDetector_Y, minY, maxY); // klemmt die Y-Position auf den Bereich zwischen minY und maxY
-        fallDetector.transform.position = new Vector2(transform.position.x, newY);
+        fallDetector.transform.position = new Vector2(transform.position.x, currPosDetector_Y);
     }
 }
