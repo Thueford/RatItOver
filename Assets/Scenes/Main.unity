@@ -301,7 +301,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2104154485564654908, guid: 43c4ad27057747843bfc9683729d2601, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -30.85
+      value: -24.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 2104154485564654908, guid: 43c4ad27057747843bfc9683729d2601, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 12.42
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43c4ad27057747843bfc9683729d2601, type: 3}
@@ -814,6 +818,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+--- !u!1 &1687820438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1910363520}
+  - component: {fileID: 1910363519}
+  m_Layer: 0
+  m_Name: 'Recovery GameObject for SphereCollider (ID in file: 1910363519)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1805886716 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7097116376284559529, guid: 13844089149ebad449ee3e094de8d51d, type: 3}
