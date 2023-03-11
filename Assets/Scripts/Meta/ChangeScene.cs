@@ -5,6 +5,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,25 +14,31 @@ public class ChangeScene : MonoBehaviour
 
     public void btnPressed_Credits()
     {
-        Debug.Log("Credits");
+        UnityEngine.Debug.Log("Credits");
         SceneManager.LoadScene("CreditScene");
     }
 
     public void btnPressed_Start()
     {
-        Debug.Log("Menu Start");
+        UnityEngine.Debug.Log("Story Start");
+        SceneManager.LoadScene("story_scene");
+    }
+
+    public void btnPressed_StartJetztAberWirklich()
+    {
+        UnityEngine.Debug.Log("Start");
         SceneManager.LoadScene("Main");
     }
 
     public void btnPressed_Close()
     {
-        Debug.Log("Goodbye");
+        UnityEngine.Debug.Log("Goodbye");
         Application.Quit();
     }
 
     public void btnPressed_BackToStartScene()
     {
-        Debug.Log("Menu Backstart");
+        UnityEngine.Debug.Log("Menu Backstart");
         SceneManager.LoadScene("StartScene");
     }
 }

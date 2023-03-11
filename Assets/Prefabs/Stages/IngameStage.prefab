@@ -7,9 +7,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8060858329863626077, guid: 949ee5a9413ce154f95e973b6a289bd4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060858329863626077, guid: 949ee5a9413ce154f95e973b6a289bd4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2664552802513600373, guid: 4e04cbbf6e2159e4bb24f5a71da116d9, type: 3}
       propertyPath: m_Name
       value: IngameStage
+      objectReference: {fileID: 0}
+    - target: {fileID: 5654114992461090016, guid: 4e04cbbf6e2159e4bb24f5a71da116d9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -29.000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5654114992461090016, guid: 4e04cbbf6e2159e4bb24f5a71da116d9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5805330423346525998, guid: 4e04cbbf6e2159e4bb24f5a71da116d9, type: 3}
       propertyPath: m_RootOrder
@@ -17,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5805330423346525998, guid: 4e04cbbf6e2159e4bb24f5a71da116d9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 5805330423346525998, guid: 4e04cbbf6e2159e4bb24f5a71da116d9, type: 3}
       propertyPath: m_LocalPosition.y
