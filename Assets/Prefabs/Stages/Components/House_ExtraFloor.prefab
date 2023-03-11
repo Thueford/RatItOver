@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4872266382215594449}
   - component: {fileID: 8533124869751790418}
   - component: {fileID: 4631116037888148299}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8742718782114133265}
   - component: {fileID: 8654198449879100508}
   - component: {fileID: 9190004804535459915}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar_Cross.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3542392498140443586}
   - component: {fileID: 4589044239295821006}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: House_ExtraFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 7220332471471689668}
   - component: {fileID: 2379626566610951872}
   - component: {fileID: 5103370096504589202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 4626349101533827072}
   - component: {fileID: 2880532024188160048}
   - component: {fileID: 3503209116663635608}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 860807204295180649}
   - component: {fileID: 3773544537094394070}
   - component: {fileID: 2522802555648335620}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 3404124657680602376}
   - component: {fileID: 3271381892704518085}
   - component: {fileID: 230501893922963285}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
