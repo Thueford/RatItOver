@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Reflection;
 using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
     public float throwHeight, strength, radius;
     internal Vector3 dir;
+    private bool exploded = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +27,9 @@ public class Bomb : MonoBehaviour
 
     void StarteMegaFetteExplosion()
     {
+        if (exploded) { Debug.Log("Saved your ass"); return; }
+        exploded = true;
+
         Bounds b = GetComponent<Collider>().bounds;
         Vector2 force = Player.player.rat.transform.position - (b.center - b.extents.y * Vector3.up);
         float radiusSq = radius * radius;
