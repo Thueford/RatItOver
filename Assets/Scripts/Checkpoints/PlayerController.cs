@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GetComponent<Rigidbody>();
         respawnPoint = transform.position;
         Debug.Log("RespawnPoint: " + respawnPoint.x + "," + respawnPoint.y + "," + respawnPoint.z);
         checkpoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Checkpoint"));
