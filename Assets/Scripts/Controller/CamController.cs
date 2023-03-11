@@ -36,7 +36,7 @@ public class CamController : MonoBehaviour
         Time.fixedDeltaTime = 1f / targetFPS;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         // Debug.Log("fps " + (1 / Time.deltaTime));
         if (targets.Length == 0) return;

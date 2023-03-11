@@ -22,10 +22,7 @@ public class InputController : MonoBehaviour
     public InputActionMap gameplayActions;
     public Pause pause;
 
-    internal InputAction dirAction;
-    internal InputAction placeAction;
-    internal InputAction resetAction;
-
+    internal InputAction moveAction, dirAction, placeAction, resetAction;
     
     private void Awake()
     {
@@ -33,6 +30,7 @@ public class InputController : MonoBehaviour
 
         foreach (var action in gameplayActions) action.Enable();
 
+        moveAction = gameplayActions["Move"];
         dirAction = gameplayActions["Direction"];
         placeAction = gameplayActions["PlaceBomb"];
         resetAction = gameplayActions["Reset"];

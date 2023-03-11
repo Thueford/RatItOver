@@ -14,8 +14,11 @@ public class Player : MonoBehaviour
     internal InputController inputController;
 
     [ReadOnly] public bool grounded; // = !airborne
+    public float speed = 4, jumpHeight = 6;
 
     public Action OnRoundReset = () => { };
+    public PlayerPhysics physics;
+    public Collider coll;
     public Vector3 pos => transform.position;
 
     //public Action OnMatchReset = () => { };
@@ -36,6 +39,8 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         inputController = GetComponent<InputController>();
+        physics = GetComponent<PlayerPhysics>();
+        coll = GetComponentInChildren<Collider>();
 
         // jumpYSpeed = Mathf.Sqrt(2f * jumpGravity * jumpHeight);
         player = this;
