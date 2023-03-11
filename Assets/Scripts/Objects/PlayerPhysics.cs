@@ -13,7 +13,7 @@ public class PlayerPhysics : MonoBehaviour
     public Rigidbody rb { get; private set; }
 
     Vector2 moveDir;
-    bool grounded = true;
+    bool grounded = true, flying = false;
     float jumpYSpeed;
     Vector3 pos => transform.position;
     Vector3 vel;
@@ -25,7 +25,7 @@ public class PlayerPhysics : MonoBehaviour
 
     void Start()
     {
-        transform.position = Stage.current.transform.position;
+        transform.position = Stage.current.spawn.transform.position;
         jumpYSpeed = Helper.GetJumpSpeed(Player.player.jumpHeight);
 
         player.inputController.moveAction.performed += ctx =>
@@ -33,6 +33,8 @@ public class PlayerPhysics : MonoBehaviour
             moveDir = ctx.ReadValue<Vector2>();
             if (moveDir.y > 0 && grounded) Jump();
         };
+
+        // Debug.Log($"{Stage.current.transform.position} {transform.position}");
     }
 
     void Jump()
@@ -49,7 +51,8 @@ public class PlayerPhysics : MonoBehaviour
         if (moveDir.x != 0) vel.x = player.speed * moveDir.x;
 
         rb.velocity = vel;
-        rb.AddForce(-4*vel.x, 0, 0);
+        if (flying) rb.AddForce(-vel.x/2, 0, 0);
+        else if (!grounded) rb.AddForce(-4*vel.x, 0, 0);
         
         Debug.DrawRay(pos, 2 * (Vector3)moveDir, Color.green);
     }
