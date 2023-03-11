@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
         {
             if (!player.inputController.dirAction.IsPressed())
             {
-                Vector2 pos = CamController.cam.WorldToScreenPoint(player.pos);
+                Vector2 pos = CamController.cam.WorldToScreenPoint(rat.transform.position);
                 Vector2 dir = Mouse.current.position.ReadValue() - pos;
                 bombDir = dir.normalized;
                 ShowBomb();
@@ -98,7 +98,7 @@ public class Player : MonoBehaviour
     void ThrowBomb()
     {
         Bomb bomb = Instantiate(Prefabs.self.bomb, pos + 0.5f * (Vector3)bombDir, Quaternion.identity);
-        bomb.dir = bombDir;
+        bomb.dir = bombDir - (Vector2)physics.rb.velocity / Physics.gravity.y;
     }
 
     #region Actions
