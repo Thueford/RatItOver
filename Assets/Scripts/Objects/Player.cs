@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 
     [ReadOnly] public bool grounded; // = !airborne
     public float speed = 4, jumpHeight = 6;
+    [Range(0,2)] public float bombTimeout = 0.5f;
 
     internal Action OnRoundReset = () => { };
     internal PlayerPhysics physics;
@@ -71,6 +72,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (Bomb.tLastExpl > 0 && Time.time - Bomb.tLastExpl >= bombTimeout) holdBomb.SetActive(true);
         if (grounded)
         {
             if (!player.inputController.dirAction.IsPressed())
@@ -98,6 +100,8 @@ public class Player : MonoBehaviour
 
     void ThrowBomb()
     {
+        if (!holdBomb.activeSelf) return;
+        holdBomb.SetActive(false);
         Bomb bomb = Instantiate(Prefabs.self.bomb, rat.transform.position + 0.5f * (Vector3)bombDir, Quaternion.identity);
         bomb.dir = bombDir - (Vector2)physics.rb.velocity / Physics.gravity.y;
     }

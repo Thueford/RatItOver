@@ -7,23 +7,18 @@ public class Bomb : MonoBehaviour
     public float throwHeight, strength, radius;
     internal Vector3 dir;
     private bool exploded = false;
+    public static float tLastExpl = 0;
 
-    // Start is called before the first frame update
+    void Awake() => Bomb.tLastExpl = 0;
+
     void Start()
     {
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.AddForce(Helper.GetJumpSpeed(throwHeight) * dir, ForceMode.VelocityChange);
         System.Array.Find(GetComponents<SphereCollider>(), o => o.isTrigger);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position += Helper.GetJumpSpeed(throwHeight) * dir * Time.deltaTime;
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        StarteMegaFetteExplosion();
-    }
+    void OnCollisionEnter(Collision collision) => StarteMegaFetteExplosion();
 
     void StarteMegaFetteExplosion()
     {
@@ -32,9 +27,12 @@ public class Bomb : MonoBehaviour
 
         Bounds b = GetComponent<Collider>().bounds;
         Vector2 force = Player.player.rat.transform.position - (b.center - b.extents.y * Vector3.up);
-        float radiusSq = radius * radius;
+
         Destroy(gameObject, 0);
         Instantiate(Prefabs.self.explosion, transform.position, Quaternion.identity);
+
+        tLastExpl = Time.time;
+        float radiusSq = radius * radius;
         if (force.sqrMagnitude > radiusSq) return;
 
         float f = (radiusSq - force.sqrMagnitude) / radiusSq;
