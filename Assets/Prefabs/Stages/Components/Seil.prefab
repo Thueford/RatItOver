@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3693241595357581988}
   - component: {fileID: 3693241595357581984}
   - component: {fileID: 3693241595357581991}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seil
   m_TagString: Wall
   m_Icon: {fileID: 0}
