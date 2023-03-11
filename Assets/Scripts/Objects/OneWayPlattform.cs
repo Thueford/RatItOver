@@ -28,12 +28,12 @@ public class OneWayPlattform : MonoBehaviour
     {
         if (other.transform.position.y > up * transform.position.y)
         {
-            UnityEngine.Debug.Log("LULULULUL");
+            //UnityEngine.Debug.Log("LULULULUL");
             collider.isTrigger = false;
         } 
         else
         {
-            UnityEngine.Debug.Log("aaaaaaa");
+            //UnityEngine.Debug.Log("aaaaaaa");
             collider.isTrigger = true;
         }
     }
