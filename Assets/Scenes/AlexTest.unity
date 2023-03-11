@@ -1985,18 +1985,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3134012559242171454, guid: abef2f54ff2ae4143a8a95d670cb0cab, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -38
-      objectReference: {fileID: 0}
-    - target: {fileID: 3134012559242171454, guid: abef2f54ff2ae4143a8a95d670cb0cab, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3134012559242171454, guid: abef2f54ff2ae4143a8a95d670cb0cab, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3134012559242171454, guid: abef2f54ff2ae4143a8a95d670cb0cab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 7
       objectReference: {fileID: 0}
