@@ -142,9 +142,8 @@ public class Player : MonoBehaviour
             if (!checkpoint.isActive()) {
                 int currentId = checkpoint.id;
                 foreach (GameObject cp in checkpoints) {
-                    if (cp.GetComponent<Checkpoint>().id < currentId) cp.GetComponent<Checkpoint>().activateCheckpoint();
+                    if (cp.GetComponent<Checkpoint>().id <= currentId) cp.GetComponent<Checkpoint>().activateCheckpoint();
                 }
-                checkpoint.activateCheckpoint();
                 fallDetector.transform.position = new Vector2(transform.position.x, checkpoint.transform.position.y - 10);
                 respawnPoint = collision.transform.position;
             }
