@@ -106,6 +106,7 @@ MonoBehaviour:
   targetFPS: 60
   remainingShakeFrames: 0
   shakeIntensity: 0.08
+  relPos: {x: 0, y: 2, z: 0}
 --- !u!114 &1875415454066468572
 MonoBehaviour:
   m_ObjectHideFlags: 0

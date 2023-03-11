@@ -21,7 +21,7 @@ public class CamController : MonoBehaviour
     [SerializeField, Range(0f, 1f)]
     private float shakeIntensity = 0.08f;
     private Vector3 pos;
-    private Vector3 relPos;
+    public Vector3 relPos = new Vector3(-0.6f, 2.1f, -5.6f);
 
     public float maxDist => zmax * 2;
 
@@ -34,7 +34,6 @@ public class CamController : MonoBehaviour
     private void Start()
     {
         pos = transform.position;
-        relPos = pos - Player.player.pos;
         Time.fixedDeltaTime = 1f / targetFPS;
     }
 
