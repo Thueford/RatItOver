@@ -7,8 +7,16 @@ public class Checkpoint : MonoBehaviour
     public int id;
     private bool activated = false;
 
-    public void activateCheckpoint() {
+    Animator anim;
+
+    void Start() {
+        anim = GetComponent<Animator>();
+        anim.enabled = false;
+    }
+    public void activateCheckpoint() 
+    {
         activated = true;
+        anim.enabled = true;
     }
 
     public bool isActive() {
