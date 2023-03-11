@@ -38,5 +38,6 @@ public class Bomb : MonoBehaviour
         float f = (radiusSq - force.sqrMagnitude) / radiusSq;
         force = Helper.GetJumpSpeed(strength) * f * force.normalized;
         Player.player.physics.rb.AddForce(force, ForceMode.VelocityChange);
+        Instantiate(Prefabs.self.explosion, transform.position, Quaternion.identity);
     }
 }

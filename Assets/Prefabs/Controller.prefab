@@ -62,5 +62,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spark: {fileID: 9191509548815480766, guid: 2a6104e615608134488c65c26bdf8918, type: 3}
+  explosion: {fileID: 1500733127030844111, guid: 83671e409817a894aa7f6c1f991d268e, type: 3}
   bomb: {fileID: 3465642705920823308, guid: 2cc0078e410d5c5498c8db6ea6e57f2e, type: 3}
   triggerSparks: 0

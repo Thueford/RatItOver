@@ -8,7 +8,6 @@ using static Helper;
 [RequireComponent(typeof(InputController))]
 public class PlayerPhysics : MonoBehaviour
 {
-
     public static Player player => Player.player;
     public Rigidbody rb { get; private set; }
 
