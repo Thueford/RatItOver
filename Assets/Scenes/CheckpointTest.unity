@@ -355,7 +355,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1017851861}
+  - component: {fileID: 1017851863}
   - component: {fileID: 1017851860}
   - component: {fileID: 1017851859}
   - component: {fileID: 1017851862}
@@ -431,21 +431,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1017851861
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1017851858}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.46, y: 7.05, z: 148.33012}
-  m_LocalScale: {x: 4.6163, y: 10.012, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1017851862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,6 +443,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f912c5dc8be36af4e8aaacea96373511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cc: {fileID: 1007607072}
+--- !u!224 &1017851863
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017851858}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 148.33012}
+  m_LocalScale: {x: 4.6163, y: 10.012, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 35.1, y: 6.5}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1652981523
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,7 +478,7 @@ GameObject:
   - component: {fileID: 1652981524}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -583,8 +589,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1738780927}
   - component: {fileID: 1738780926}
-  - component: {fileID: 1738780925}
   - component: {fileID: 1738780924}
+  - component: {fileID: 1738780925}
   m_Layer: 0
   m_Name: Checkpoint_01
   m_TagString: Untagged
@@ -617,6 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f912c5dc8be36af4e8aaacea96373511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cc: {fileID: 1007607072}
 --- !u!212 &1738780926
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -677,7 +684,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738780923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.0927, y: 6.8243, z: 148.33012}
+  m_LocalPosition: {x: 16.6, y: 6.6, z: 148.33012}
   m_LocalScale: {x: 4.6163, y: 10.012, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
