@@ -5,6 +5,7 @@ using UnityEngine;
 public class CamController : MonoBehaviour
 {
     public static CamController self;
+    public static Camera cam;
 
     [Range(1, 50)]
     public float lazyness = 10;
@@ -27,6 +28,7 @@ public class CamController : MonoBehaviour
     void Awake()
     {
         self = this;
+        cam = GetComponent<Camera>();
     }
 
     private void Start()
