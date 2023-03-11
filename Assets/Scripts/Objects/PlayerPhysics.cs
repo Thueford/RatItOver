@@ -47,10 +47,7 @@ public class PlayerPhysics : MonoBehaviour
     {
         vel = rb.velocity;
 
-        Vector3 tmp = this.gameObject.transform.position;
-        tmp.z = 0;
-
-        this.gameObject.transform.position = tmp;
+        
 
         if (moveDir.x != 0) vel.x = player.speed * moveDir.x;
         float maxSpd = Helper.GetJumpSpeed(10);
