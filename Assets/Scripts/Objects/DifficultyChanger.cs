@@ -7,7 +7,7 @@ public class DifficultyChanger : MonoBehaviour
     
     public void setDifficulty(string difficulty) 
     {
-        Debug.Debug.Log("Set Difficulty to " + difficulty);
-        PlayerPrefs.SetString("Difficulty", difficulty);
+        Debug.Log("Set Difficulty to " + difficulty);
+        PlayerPrefs.SetString("difficulty", difficulty);
     }
 }
