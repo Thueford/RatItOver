@@ -67,7 +67,11 @@ public class Player : MonoBehaviour
         checkpoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Checkpoint"));
         Debug.Log("Get all Checkpoint in Lvl");
 
-        inputController.dirAction.performed += ctx => arrowDir = ctx.ReadValue<Vector2>();
+        inputController.dirAction.performed += ctx =>
+        {
+            if (PlayerPrefs.GetString("difficulty") == "easy")
+                arrowDir = ctx.ReadValue<Vector2>();
+        };
         inputController.placeAction.performed += ctx => Invoke(nameof(ThrowBomb), 0);
     }
 
