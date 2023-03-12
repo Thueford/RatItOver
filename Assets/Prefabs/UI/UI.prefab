@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 4823851089568597341}
   - component: {fileID: 4823851089568597342}
   - component: {fileID: 1174028069534229631}
+  - component: {fileID: 2920745402605012804}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -393,18 +394,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7789042954391044059, guid: 31dbf40e12eae4d4a83808c07459ec92, type: 3}
-        m_TargetAssemblyTypeName: SoundHandler, Assembly-CSharp
-        m_MethodName: PlayClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 4823851090960202043}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: Exit
@@ -417,6 +406,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2920745402605012804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4823851089568597329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7789042954391044059, guid: 31dbf40e12eae4d4a83808c07459ec92, type: 3}
+          m_TargetAssemblyTypeName: SoundHandler, Assembly-CSharp
+          m_MethodName: PlayClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4823851089625250644
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,6 +932,7 @@ GameObject:
   - component: {fileID: 4823851091165572528}
   - component: {fileID: 4823851091165572529}
   - component: {fileID: 5727049142512374213}
+  - component: {fileID: 6152133631722393083}
   m_Layer: 5
   m_Name: PauseStartButton
   m_TagString: Untagged
@@ -1024,31 +1043,48 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4823851091165572529}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7789042954391044059, guid: 31dbf40e12eae4d4a83808c07459ec92, type: 3}
-        m_TargetAssemblyTypeName: SoundHandler, Assembly-CSharp
-        m_MethodName: PlayClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4823851090960202043}
-        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
-        m_MethodName: enterPause
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &6152133631722393083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4823851091165572532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7789042954391044059, guid: 31dbf40e12eae4d4a83808c07459ec92, type: 3}
+          m_TargetAssemblyTypeName: SoundHandler, Assembly-CSharp
+          m_MethodName: PlayClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4823851090960202043}
+          m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+          m_MethodName: enterPause
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4823851091352653938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,6 +1097,7 @@ GameObject:
   - component: {fileID: 4823851091352653950}
   - component: {fileID: 4823851091352653951}
   - component: {fileID: 816781429664828445}
+  - component: {fileID: 4471360292101512068}
   m_Layer: 5
   m_Name: PauseStopButton
   m_TagString: Untagged
@@ -1172,18 +1209,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7789042954391044059, guid: 31dbf40e12eae4d4a83808c07459ec92, type: 3}
-        m_TargetAssemblyTypeName: SoundHandler, Assembly-CSharp
-        m_MethodName: PlayClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 4823851090960202043}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: endPause
@@ -1196,6 +1221,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4471360292101512068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4823851091352653938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7789042954391044059, guid: 31dbf40e12eae4d4a83808c07459ec92, type: 3}
+          m_TargetAssemblyTypeName: SoundHandler, Assembly-CSharp
+          m_MethodName: PlayClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5640098183938578962
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,6 +1397,7 @@ GameObject:
   - component: {fileID: 732121311662840654}
   - component: {fileID: 2423555330872235484}
   - component: {fileID: 983293865943969345}
+  - component: {fileID: 1165383449663476643}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -1454,18 +1509,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7789042954391044059, guid: 31dbf40e12eae4d4a83808c07459ec92, type: 3}
-        m_TargetAssemblyTypeName: SoundHandler, Assembly-CSharp
-        m_MethodName: PlayClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 4823851090960202043}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: restart
@@ -1478,6 +1521,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1165383449663476643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7508126653748064080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7789042954391044059, guid: 31dbf40e12eae4d4a83808c07459ec92, type: 3}
+          m_TargetAssemblyTypeName: SoundHandler, Assembly-CSharp
+          m_MethodName: PlayClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7569525107796374571
 GameObject:
   m_ObjectHideFlags: 0

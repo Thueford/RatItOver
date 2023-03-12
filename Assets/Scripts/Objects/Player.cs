@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     internal PlayerPhysics physics;
     internal Collider coll;
     internal Vector3 pos => transform.position;
-    Vector2 bombDir;
+    Vector2 bombDir, arrowDir;
 
     // for checkpoints
     private Vector3 respawnPoint;
@@ -66,9 +66,8 @@ public class Player : MonoBehaviour
         checkpoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Checkpoint"));
         Debug.Log("Get all Checkpoint in Lvl");
 
-        inputController.dirAction.performed += ctx =>
-            bombDir = ctx.ReadValue<Vector2>();
-        inputController.placeAction.performed += ctx => ThrowBomb();
+        inputController.dirAction.performed += ctx => arrowDir = ctx.ReadValue<Vector2>();
+        inputController.placeAction.performed += ctx => Invoke(nameof(ThrowBomb), 0);
     }
 
     void LateUpdate()
@@ -76,13 +75,14 @@ public class Player : MonoBehaviour
         if (Bomb.tLastExpl > 0 && Time.time - Bomb.tLastExpl >= bombTimeout) holdBomb.SetActive(true);
         if (grounded)
         {
-            if (!player.inputController.dirAction.IsPressed())
+            if (arrowDir.sqrMagnitude == 0)
             {
                 Vector2 pos = CamController.cam.WorldToScreenPoint(rat.transform.position);
                 Vector2 dir = Mouse.current.position.ReadValue() - pos;
                 bombDir = dir.normalized;
-                ShowBomb();
             }
+            else bombDir = arrowDir;
+            ShowBomb();
         }
 
         // if (Pause.pause == anim.enabled) anim.enabled = !Pause.pause;
