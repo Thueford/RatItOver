@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundHandler : MonoBehaviour
 {
@@ -26,10 +27,18 @@ public class SoundHandler : MonoBehaviour
 
     public static Dictionary<string, AudioClip[]> clips = new Dictionary<string, AudioClip[]>();
 
+    static string lastScene;
     // Start is called before the first frame update
     void Awake()
     {
-        if (!self) self = this;
+        Scene s = SceneManager.GetActiveScene();
+        if (lastScene != s.name && (s.name == "Main" || s.name == "StartScene"))
+        {
+            lastScene = s.name;
+            if (self) Destroy(self.gameObject);
+            DontDestroyOnLoad(self = this);
+        }
+        else MusicSource.enabled = false;
 
         // fill clip dict
         foreach (NamedClip c in clipArray)
@@ -37,6 +46,8 @@ public class SoundHandler : MonoBehaviour
             if (!clips.ContainsKey(c.name))
                 clips.Add(c.name, c.clip);
         }
+
+        
     }
 
     public static void PlayClip(AudioClip c)
