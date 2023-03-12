@@ -169,7 +169,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &135976715
 MonoBehaviour:
@@ -1142,7 +1142,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -2.443, y: -9.908, z: -1.572}
 --- !u!114 &1605075031
 MonoBehaviour:
@@ -1153,39 +1153,57 @@ MonoBehaviour:
   m_GameObject: {fileID: 1605075027}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f4248aeed648db4ca800cfb488f4ae4, type: 3}
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lensFlare: {fileID: 0}
-  MatBlur: {fileID: 2100000, guid: 916b6a1e91ad22442865b9688eaa3135, type: 2}
-  MatBloom: {fileID: 2100000, guid: a4de8843a147cc74d9b28537d8db95c7, type: 2}
-  MatCA: {fileID: 2100000, guid: 91fdfe7ca412c6143a606961ec3892f8, type: 2}
-  MatLensFlare: {fileID: 2100000, guid: ec42e1e37d37bfc4f9b60d1db10e671c, type: 2}
-  MatCRT: {fileID: 2100000, guid: 02408c5dbfbf41a449df4b0c0b396a4c, type: 2}
-  lensDirtTex: {fileID: 2800000, guid: 1d561adfdeba8d540abff609cdb9bc7c, type: 3}
-  starburstTex: {fileID: 2800000, guid: a41a4b1fd3574674ba44a10ae5241dd9, type: 3}
-  skipAll: 0
-  useBloom: 1
-  bloomBlurrAmount: 4
-  bloomThreshold: 0.963
-  useCA: 1
-  caAmount: 0.0005
-  useLensFlare: 1
-  lfGhostCount: 6
-  lfBlurrCount: 3
-  lfThreshold: 0.77
-  lfGhostSpacing: 0.69
-  lfCAStrength: 0.15
-  useCRTEffect: 1
-  vignetteAmount: 0.8
-  vignetteWidth: 0.1
-  sourceTex: {fileID: 0}
-  brightTex: {fileID: 0}
-  blurBuff: {fileID: 0}
-  caResult: {fileID: 0}
-  lfResult: {fileID: 0}
-  lensTex: {fileID: 0}
-  writeBackBuff: {fileID: 0}
+  volumeTrigger: {fileID: 1605075030}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 3
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &1640827472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,6 +1653,38 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.61459595
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.69893324
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_Shadows.m_NormalBias
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 8597132787563876617, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1879,7 +1929,7 @@ RectTransform:
   - {fileID: 235426737}
   - {fileID: 1640827473}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
