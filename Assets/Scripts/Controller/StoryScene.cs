@@ -9,6 +9,7 @@ public class StoryScene : MonoBehaviour
     public TMPro.TextMeshProUGUI text;
     public InputActionMap gameplayActions;
     public Image overlay;
+    private RectTransform tText;
 
     public bool repeat = true;
     private string[] s;
@@ -28,6 +29,7 @@ public class StoryScene : MonoBehaviour
         foreach (var action in gameplayActions) action.Enable();
         Debug.Log(Keyboard.current + " " + Mouse.current);
         gameplayActions.devices = new InputDevice[] { Keyboard.current, Mouse.current };
+        tText = text.transform.GetComponent<RectTransform>();
 
         ev_Done();
     }
@@ -70,7 +72,6 @@ public class StoryScene : MonoBehaviour
         // Events
         if (text.text == "" && s[iText][iChar] == '[')
         {
-            CancelInvoke();
             handleEvent(s[iText].Substring(iChar + 1, s[iText].IndexOf(']') - iChar - 1));
             iText++;
             return;
@@ -78,6 +79,8 @@ public class StoryScene : MonoBehaviour
 
         // mid pause
         if (iChar == s[iText].Length || s[iText][iChar] == '%') CancelInvoke();
+        // newline
+        else if (s[iText][iChar] == '/') text.text += "\n";
         // next line
         else if (s[iText][iChar] == '\n') text.text = "";
         // delays
@@ -101,6 +104,21 @@ public class StoryScene : MonoBehaviour
         overlay.enabled = true;
         overlay.color = new Color(0, 0, 0, fadeDir == 1 ? 0 : 1);
         InvokeRepeating(nameof(Fade), 0, 0.1f);
+    }
+
+    int shakeFrames = 0;
+    Vector2 apos;
+    public void ev_Shake()
+    {
+        apos = tText.anchoredPosition;
+        shakeFrames = 50;
+    }
+
+    void Update()
+    {
+        if (shakeFrames-- <= 0) return;
+        if (shakeFrames == 0) tText.anchoredPosition = apos;
+        else tText.anchoredPosition = apos + 2 * new Vector2(Random.value - 0.5f, Random.value - 0.5f).normalized;
     }
 
     void Fade()
