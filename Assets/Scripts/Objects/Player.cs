@@ -137,12 +137,8 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter(Collider collision) 
     {
-        Debug.Log("Collision");
-        if (collision.CompareTag("FallDetector"))
-        {
-            Debug.Log("Collision: FallDetector");
-            transform.position = respawnPoint;
-        }
+        Debug.Log("Collision " + collision.name);
+        if (collision.CompareTag("FallDetector")) Respawn();
         else if (collision.CompareTag("Checkpoint"))
         {
             Checkpoint checkpoint = collision.GetComponent<Checkpoint>();
@@ -156,6 +152,8 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    public void Respawn() => transform.position = respawnPoint;
     
     private void setFallDetectorPos()
     {
