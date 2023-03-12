@@ -21,6 +21,13 @@ public class Checkpoint : MonoBehaviour
         anim.enabled = true;
     }
 
+    public void deactivateCheckpoint()
+    {
+        UnityEngine.Debug.Log("Deactivate Checkpoint");
+        activated = false;
+        anim.enabled = false;
+    }
+
     public bool isActive() {
         return activated;
     }

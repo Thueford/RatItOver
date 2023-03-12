@@ -154,7 +154,17 @@ public class Player : MonoBehaviour
     }
 
     public void Respawn() => transform.position = respawnPoint;
-    
+
+    public void RespawnAtLevelStart()
+    {
+        foreach (GameObject cp in checkpoints)
+        {
+            cp.GetComponent<Checkpoint>().deactivateCheckpoint();
+        }
+        fallDetector.transform.position = new Vector2(transform.position.x, Stage.current.spawn.transform.position.y - 10);
+        transform.position = Stage.current.spawn.transform.position;
+    }
+
     private void setFallDetectorPos()
     {
         float currPosDetector_Y = fallDetector.transform.position.y;

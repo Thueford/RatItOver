@@ -51,6 +51,7 @@ public class GameController : MonoBehaviour
 
     public static void RestartGame()
     {
+        Player.player.RespawnAtLevelStart();
         self.StartGame();
     }
     
