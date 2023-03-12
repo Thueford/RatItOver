@@ -183,4 +183,9 @@ public class Player : MonoBehaviour
         float currPosDetector_Y = fallDetector.transform.position.y;
         fallDetector.transform.position = new Vector2(transform.position.x, currPosDetector_Y);
     }
+
+    public void setDifficulty(string difficulty) 
+    {
+        PlayerPrefs.SetString("Difficulty", difficulty);
+    }
 }
