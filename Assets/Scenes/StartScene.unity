@@ -488,6 +488,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235426736}
   m_CullTransparentMesh: 1
+--- !u!114 &239981780 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1656019036432837769, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
+  m_PrefabInstance: {fileID: 480826658}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &243922326 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5931138887638021021, guid: eb7cafcf4ec1560438325aaefcc71080, type: 3}
@@ -641,7 +652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1656019036432837769, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1656019036432837769, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -660,12 +671,16 @@ PrefabInstance:
       value: DifficultyChanger, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1656019036432837769, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 239981780}
+    - target: {fileID: 1656019036432837769, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: hard
       objectReference: {fileID: 0}
     - target: {fileID: 1656019036432837769, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.UI.Toggle, UnityEngine.UI
       objectReference: {fileID: 0}
     - target: {fileID: 2647786774332291387, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
       propertyPath: m_Pivot.x
@@ -790,7 +805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1656019036432837769, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1656019036432837769, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -809,12 +824,16 @@ PrefabInstance:
       value: DifficultyChanger, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1656019036432837769, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2127109091}
+    - target: {fileID: 1656019036432837769, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: easy
       objectReference: {fileID: 0}
     - target: {fileID: 1656019036432837769, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.UI.Toggle, UnityEngine.UI
       objectReference: {fileID: 0}
     - target: {fileID: 2647786774332291387, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
       propertyPath: m_Pivot.x
@@ -1799,6 +1818,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2127109091 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1656019036432837769, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
+  m_PrefabInstance: {fileID: 855208330}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5931138887410943499
 PrefabInstance:
   m_ObjectHideFlags: 0
