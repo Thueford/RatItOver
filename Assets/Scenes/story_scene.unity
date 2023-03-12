@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17997544, g: 0.22534096, b: 0.3067248, a: 1}
+  m_IndirectSpecularColor: {r: 0.17997566, g: 0.2253413, b: 0.3067255, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -597,10 +597,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Es war einmal eine Ratte\nDie war Querschnittsgel\xE4hmt\nSie benutzte
-    deshalb einen Eimer zur Fortbewegung\nUnd BOMBEN\nSie m\xF6chte ihren Lebensgef\xE4hrten
-    treffen\nDer wohnte aber einige Stockwerke \xFCber ihr\nAlso machte sie sich
-    auf den Weg ...\n[Done]"
+  m_text: "Grummel, grummel...%/\"Ich habe Hunger\", dachte die kleine Ratte Chili\nSie
+    schlich sich durch eine K\xFCche auf der Suche nach einem saftigen St\xFCck K\xE4se\n[Shake]\n\"AAHHH!%
+    Eine Ratte!\"%/\"Mach sie weg, Hermann!\"\nVor Schreck gel\xE4hmt schoss Chilli
+    durch einen Spalt unter der Haust\xFCr.\n[Shake]\n\"Ich krieg dich\"%/Ein Mann
+    riss die T\xFCr auf, doch Chili fl\xFCchtete sich in einen Eimer\nAber irgendwas
+    lag bereits darin...\n[Done]"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
