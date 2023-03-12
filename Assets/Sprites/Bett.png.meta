@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 493a7e8b5c84b0540bea7f68681e83ff
+guid: ab20a1ec7f8e92147bc9c69ffb24b73b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,29 +101,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Klavier_0
+      name: Bett_0
       rect:
         serializedVersion: 2
-        x: 349
-        y: 84
-        width: 1943
-        height: 1494
+        x: 379
+        y: 389
+        width: 1846
+        height: 997
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af2834a820d24834c8ef4cf346a2c284
-      internalID: 1417743400
+      spriteID: 9fd2eec36370e8d4fa7915b0e3244a2e
+      internalID: -140466490
       vertices: []
       indices: 
       edges: []
@@ -140,7 +128,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f0f88572d7c551f4386a8d2c50d9f2d7
+    spriteID: 892194005b09721499e3c21eed8a923d
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +136,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Klavier_0: 1417743400
+      Bett_0: -140466490
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
