@@ -7,6 +7,7 @@ using System.Linq;
 [RequireComponent(typeof(Player))]
 public class InputController : MonoBehaviour
 {
+    public static InputController self;
     [SerializeField] private InputDevice device;
 
     private bool skipInput => GameController.noInputs;
@@ -26,6 +27,7 @@ public class InputController : MonoBehaviour
     
     private void Awake()
     {
+        self = this;
         player = GetComponent<Player>();
 
         foreach (var action in gameplayActions) action.Enable();
@@ -37,7 +39,7 @@ public class InputController : MonoBehaviour
 
         // moveAction = gameplayActions["Move"];
         // Mouse.current.position
-        gameplayActions["Pause"].performed += ctx => { pause.enterPause(); };
+        gameplayActions["Pause"].performed += ctx => pause.enterPause();
     }
 
     void OnDisable()
@@ -59,8 +61,12 @@ public class InputController : MonoBehaviour
         gameplayActions.devices = new InputDevice[] { Keyboard.current, Mouse.current };
     }
 
+    bool inpState = true;
     void Update()
     {
-        if (skipInput) return;
+        if (skipInput == inpState) return;
+        if (skipInput) InputController.self.gameplayActions.Disable();
+        else InputController.self.gameplayActions.Enable();
+        inpState = skipInput;
     }
 }
