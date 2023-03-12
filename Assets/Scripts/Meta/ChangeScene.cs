@@ -40,4 +40,10 @@ public class ChangeScene : MonoBehaviour
         UnityEngine.Debug.Log("Menu Backstart");
         SceneManager.LoadScene("StartScene");
     }
+
+    public void btnPressed_Anleitung()
+    {
+        UnityEngine.Debug.Log("Start Anleitung");
+        SceneManager.LoadScene("explanation_scene");
+    }
 }
