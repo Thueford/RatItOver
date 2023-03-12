@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2199abecbf0cf8a49b860dbef906bf17
+guid: 83194d98aea60454691c8333801e466c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Unterhose_0
+      name: Ballon_1_0
       rect:
         serializedVersion: 2
-        x: 806
-        y: 333
-        width: 902
-        height: 1011
+        x: 1331
+        y: 22
+        width: 465
+        height: 1589
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d4abfaa856caa34aa3169cc3e796cdc
-      internalID: 1362203540
+      spriteID: 32fd473007296c54dad5a0a2d9fe085f
+      internalID: -1299950029
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 4e7299a5325d2b242805fe14dfd2b451
+    spriteID: b27b7f00749f7f6448e32e085c797a02
     internalID: 0
     vertices: []
     indices: 
@@ -136,7 +136,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Unterhose_0: 1362203540
+      Ballon_1_0: -1299950029
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
