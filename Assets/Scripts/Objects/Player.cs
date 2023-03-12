@@ -182,7 +182,7 @@ public class Player : MonoBehaviour
     {
         foreach (GameObject cp in checkpoints)
         {
-            cp.GetComponent<Checkpoint>().SetActive(enable);
+            cp.SetActive(enable);
         }
     }
 

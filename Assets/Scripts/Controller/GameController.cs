@@ -75,11 +75,11 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.GetInt(difficulty)==0) 
+        if (PlayerPrefs.GetInt("difficulty")==0) 
         {
-            setEnabelationOfAllCheckpoints(true);
+            Player.player.setEnabelationOfAllCheckpoints(true);
         } else {
-            setEnabelationOfAllCheckpoints(false);
+            Player.player.setEnabelationOfAllCheckpoints(false);
         }
         // if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == GameScene)
         isRestart = true;
