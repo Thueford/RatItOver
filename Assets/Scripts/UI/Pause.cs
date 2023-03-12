@@ -24,21 +24,18 @@ public class Pause : MonoBehaviour
     public void enterPause()
     {
         panel.gameObject.SetActive(true);
-        SoundHandler.PlayClick();
         GameController.SetTimeScale(0);
         defaultSelection.Select();
     }
 
     public void endPause()
     {
-        SoundHandler.PlayClick();
         panel.gameObject.SetActive(false);
         GameController.SetTimeScale(1);
     }
 
     public void Exit()
     {
-        SoundHandler.PlayClick();
         Time.timeScale = 1;
         SceneManager.LoadScene("StartScene");
     }

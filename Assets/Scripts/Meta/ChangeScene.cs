@@ -11,7 +11,6 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-
     public void btnPressed_Credits()
     {
         UnityEngine.Debug.Log("Credits");
