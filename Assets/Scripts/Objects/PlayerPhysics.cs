@@ -29,11 +29,10 @@ public class PlayerPhysics : MonoBehaviour
 
         player.inputController.moveAction.performed += ctx =>
         {
+            if (PlayerPrefs.GetString("difficulty") == "hard") return;
             moveDir = ctx.ReadValue<Vector2>();
             if (moveDir.y > 0 && grounded) Jump();
         };
-
-        // Debug.Log($"{Stage.current.transform.position} {transform.position}");
     }
 
     void Jump()
@@ -46,8 +45,6 @@ public class PlayerPhysics : MonoBehaviour
     void Update()
     {
         vel = rb.velocity;
-
-        
 
         if (moveDir.x != 0) vel.x = player.speed * moveDir.x;
         float maxSpd = Helper.GetJumpSpeed(10);
