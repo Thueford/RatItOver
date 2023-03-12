@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5377678607940941029}
   - component: {fileID: 236343090733137017}
   - component: {fileID: 7952344991934043577}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Checkpoint
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ RectTransform:
   m_GameObject: {fileID: 1788097322592844024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.16998209, y: 0.19656137, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,7 +40,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.3531, y: 6.5918}
-  m_SizeDelta: {x: 19.2579, y: 14.2975}
+  m_SizeDelta: {x: 20, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &1788097322592844025
 BoxCollider:
@@ -53,8 +53,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 25.597551, y: 14.23672, z: 0.2}
-  m_Center: {x: -3.0997767, y: 0.09514662, z: 0}
+  m_Size: {x: 20, y: 14.23672, z: 0.2}
+  m_Center: {x: 3, y: 0, z: 0}
 --- !u!114 &1788097322592844028
 MonoBehaviour:
   m_ObjectHideFlags: 0
