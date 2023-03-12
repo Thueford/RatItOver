@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: a1080bc02a8d5f244bd1773f6deaeb51, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -510,8 +510,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 0}
+  m_EditorClassIdentifier:
+  volumeTrigger: {fileID: 73507305}
   volumeLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -1645,6 +1645,42 @@ PrefabInstance:
     - target: {fileID: 7320264756746813635, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483468052478287651, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.44850832
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483468052478287651, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.8554839
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483468052478287651, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.2560896
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483468052478287651, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.037492573
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483468052478287651, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 48.433
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483468052478287651, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -153.711
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483468052478287651, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -134.678
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
+      propertyPath: m_Shadows.m_NormalBias
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 8597132787563876617, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_IsActive
