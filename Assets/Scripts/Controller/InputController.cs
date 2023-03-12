@@ -23,7 +23,7 @@ public class InputController : MonoBehaviour
     public InputActionMap gameplayActions;
     public Pause pause;
 
-    internal InputAction moveAction, dirAction, placeAction, resetAction, respawnAction;
+    internal InputAction moveAction, dirAction, placeAction, respawnAction;
 
     private void Awake()
     {
@@ -35,7 +35,6 @@ public class InputController : MonoBehaviour
         moveAction = gameplayActions["Move"];
         dirAction = gameplayActions["Direction"];
         placeAction = gameplayActions["PlaceBomb"];
-        resetAction = gameplayActions["Reset"];
         respawnAction = gameplayActions["Respawn"];
 
         // moveAction = gameplayActions["Move"];
