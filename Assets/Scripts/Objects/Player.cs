@@ -111,7 +111,7 @@ public class Player : MonoBehaviour
 
     void ThrowBomb()
     {
-        if (!holdBomb.activeSelf) return;
+        if (!holdBomb.activeSelf || GameController.noInputs) return;
         holdBomb.SetActive(false);
         Bomb bomb = Instantiate(Prefabs.self.bomb, rat.transform.position + 0.5f * (Vector3)bombDir, Quaternion.identity);
         bomb.dir = bombDir - (Vector2)physics.rb.velocity / Physics.gravity.y;
