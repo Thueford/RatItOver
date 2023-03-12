@@ -21,6 +21,7 @@ public class Ende : MonoBehaviour
     {
         if (other.gameObject.tag == "Player1")
         {
+            Debug.Log("Enter");
             SceneManager.LoadScene("CreditScene");
         }
     }
