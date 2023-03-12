@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using static Helper;
 
 [RequireComponent(typeof(InputController), typeof(PlayerPhysics))]
@@ -148,6 +149,9 @@ public class Player : MonoBehaviour
     void OnTriggerEnter(Collider collision) 
     {
         Debug.Log("Collision " + collision.name);
+
+        if (collision.gameObject.tag == "Goal") SceneManager.LoadScene("CreditScene");
+
         if (collision.CompareTag("FallDetector")) Respawn();
         else if (collision.CompareTag("Checkpoint"))
         {
