@@ -7,8 +7,5 @@ using static Helper;
 
 public class Explosion : MonoBehaviour
 {
-    void Start()
-    {
-        Destroy(gameObject, 0.5f);
-    }
+    void Start() => Destroy(gameObject, 1);
 }
