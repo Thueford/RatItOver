@@ -103,18 +103,153 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Ratten_Frames_3_3
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 1013
+        width: 973
+        height: 394
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c52251652865d3f48a78ec9556c73eed
+      internalID: 1121466243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ratten_Frames_3_4
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 1047
+        width: 973
+        height: 394
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0116eaf82db35f740a4cc8cbe7fec6c5
+      internalID: -1970682356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ratten_Frames_3_5
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 710
+        width: 973
+        height: 394
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4d26f9cbfbe1749a352b5944d938ff
+      internalID: -1644343563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ratten_Frames_3_6
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 707
+        width: 973
+        height: 394
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b7b1b198e3ebe141936e48c44b3723d
+      internalID: -882969446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ratten_Frames_3_7
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 251
+        width: 973
+        height: 394
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 101465107b8863242b9347919f022096
+      internalID: -1615951431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ratten_Frames_3_8
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 280
+        width: 973
+        height: 394
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65bbe0ebde1cc4242ade0cc5452f8b7f
+      internalID: -2125634715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0c378c5a7bb82134886ae2f57dae3e09
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ratten_Frames_3_4: -1970682356
+      Ratten_Frames_3_1: -153599349
+      Ratten_Frames_3_7: -1615951431
+      Ratten_Frames_3_2: 1715664578
+      Ratten_Frames_3_3: 1121466243
+      Ratten_Frames_3_8: -2125634715
+      Ratten_Frames_3_6: -882969446
+      Ratten_Frames_3_5: -1644343563
+      Ratten_Frames_3_0: -539184442
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
