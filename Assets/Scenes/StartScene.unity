@@ -757,7 +757,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5159560529044856815, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
       propertyPath: m_text
-      value: Hard
+      value: hard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
@@ -906,7 +906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5159560529044856815, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
       propertyPath: m_text
-      value: Easy
+      value: easy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 251904d80bf1f3c4496871a05c18cc6a, type: 3}
