@@ -23,8 +23,8 @@ public class InputController : MonoBehaviour
     public InputActionMap gameplayActions;
     public Pause pause;
 
-    internal InputAction moveAction, dirAction, placeAction, resetAction;
-    
+    internal InputAction moveAction, dirAction, placeAction, resetAction, respawnAction;
+
     private void Awake()
     {
         self = this;
@@ -36,10 +36,12 @@ public class InputController : MonoBehaviour
         dirAction = gameplayActions["Direction"];
         placeAction = gameplayActions["PlaceBomb"];
         resetAction = gameplayActions["Reset"];
+        respawnAction = gameplayActions["Respawn"];
 
         // moveAction = gameplayActions["Move"];
         // Mouse.current.position
         gameplayActions["Pause"].performed += ctx => pause.enterPause();
+        gameplayActions["Respawn"].performed += ctx => Player.player.Respawn();
     }
 
     void OnDisable()
