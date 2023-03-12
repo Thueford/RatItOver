@@ -684,7 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 2d2cca7144fcd8d46b75d347cc1231f0, type: 2}
+  sharedProfile: {fileID: 11400000, guid: abd876f3932043c4ba6e9da67694853d, type: 2}
   isGlobal: 1
   blendDistance: 0
   weight: 1
@@ -1054,7 +1054,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605075027}
   m_LocalRotation: {x: -0.020048046, y: -0.08662064, z: -0.015507471, w: 0.9959189}
-  m_LocalPosition: {x: -26.1, y: 4.9, z: -20.4}
+  m_LocalPosition: {x: -30.2, y: 3.95, z: -25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1294,19 +1294,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_Color.b
-      value: 0.61459595
+      value: 0.2153079
       objectReference: {fileID: 0}
     - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_Color.g
-      value: 0.69893324
+      value: 0.44495296
       objectReference: {fileID: 0}
     - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_Color.r
-      value: 0.9811321
+      value: 0.5943396
       objectReference: {fileID: 0}
     - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_Shadows.m_Type
@@ -1318,11 +1318,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_Shadows.m_NearPlane
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7514747978106665700, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_Shadows.m_NormalBias
-      value: 0.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8597132787563876617, guid: 8bd7e798510e3834eb0d5da6ebc1aa8e, type: 3}
       propertyPath: m_IsActive
