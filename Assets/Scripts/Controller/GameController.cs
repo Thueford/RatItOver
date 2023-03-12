@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
         set != 1 ? set : (self.isEndSlowmo ? 0.5f : 1);
     private static void SetSlowmo(bool set) => SetTimeScale((self.isEndSlowmo = set) ? 0.5f : 1);
 
-    private IEnumerator CrStartGame(bool skipCountDown = false)
+    private IEnumerator CrStartGame(bool skipCountDown = true)
     {
         isRestart = true;
 

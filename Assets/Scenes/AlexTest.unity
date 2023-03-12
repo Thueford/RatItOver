@@ -589,6 +589,10 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2536614047431521899, guid: 13844089149ebad449ee3e094de8d51d, type: 3}
+      propertyPath: pause
+      value: 
+      objectReference: {fileID: 1990359654}
     - target: {fileID: 2705916214062689467, guid: 13844089149ebad449ee3e094de8d51d, type: 3}
       propertyPath: m_TagString
       value: Player1
@@ -678,6 +682,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bad122888733454b95d16a6687da9cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1990359654 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4823851090960202043, guid: 8bf6728223ee26148bbeb7636d2d18b6, type: 3}
+  m_PrefabInstance: {fileID: 1182468870}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57c954d1e182b024ba078058f8a387ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2745062580949041281

@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
     // internal objects
     internal InputController inputController;
     public GameObject holdBomb;
-    public GameObject rat;
+    [NotNull] public SpriteRenderer rat;
+    [NotNull] public GameObject rat_b;
 
     [ReadOnly] public bool grounded; // = !airborne
     public float speed = 4, jumpHeight = 6;
@@ -96,6 +97,15 @@ public class Player : MonoBehaviour
         float ang = -Vector2.SignedAngle(bombDir, Vector2.down);
         rat.transform.rotation = Quaternion.Euler(0, 0, ang);
         // holdBomb.transform.position = pos + 0.5f * (Vector3)bombDir;
+
+        rat_b.transform.rotation = rat.transform.rotation;
+        float dot = Vector3.Dot(
+            transform.rotation * Vector3.up,
+            rat.transform.rotation * Vector3.up);
+        bool front = dot > -0.2;
+
+        rat.enabled = front;
+        rat_b.transform.parent.gameObject.SetActive(!front);
     }
 
     void ThrowBomb()
@@ -142,10 +152,13 @@ public class Player : MonoBehaviour
         else if (collision.CompareTag("Checkpoint"))
         {
             Checkpoint checkpoint = collision.GetComponent<Checkpoint>();
-            if (!checkpoint.isActive()) {
+            if (!checkpoint.isActive())
+            {
                 int currentId = checkpoint.id;
-                foreach (GameObject cp in checkpoints) {
-                    if (cp.GetComponent<Checkpoint>().id <= currentId) cp.GetComponent<Checkpoint>().activateCheckpoint();
+                foreach (GameObject cp in checkpoints)
+                {
+                    if (cp.GetComponent<Checkpoint>().id <= currentId)
+                        cp.GetComponent<Checkpoint>().activateCheckpoint();
                 }
                 fallDetector.transform.position = new Vector2(transform.position.x, checkpoint.transform.position.y - 10);
                 respawnPoint = collision.transform.position;
