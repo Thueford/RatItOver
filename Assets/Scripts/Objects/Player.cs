@@ -178,6 +178,14 @@ public class Player : MonoBehaviour
         transform.position = Stage.current.spawn.transform.position;
     }
 
+    public void setEnabelationOfAllCheckpoints(bool enable = true)
+    {
+        foreach (GameObject cp in checkpoints)
+        {
+            cp.GetComponent<Checkpoint>().SetActive(enable);
+        }
+    }
+
     private void setFallDetectorPos()
     {
         float currPosDetector_Y = fallDetector.transform.position.y;
