@@ -481,15 +481,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.46070665, g: 0.7906428, b: 0.8207547, a: 1}
+  m_Color: {r: 0.3773585, g: 0.36131662, b: 0.36098257, a: 0.3254902}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5c84040296c6bd040a40af0a6977505a, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: -1838401613, guid: 355c792212b6bde40b87d454633f898f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1801,6 +1801,22 @@ PrefabInstance:
     - target: {fileID: 1323394821931082467, guid: 9be4a11cf26b293438d7a991f61de67a, type: 3}
       propertyPath: m_Name
       value: Bg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377614432713872653, guid: 9be4a11cf26b293438d7a991f61de67a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1838401613, guid: 355c792212b6bde40b87d454633f898f, type: 3}
+    - target: {fileID: 6377614432713872653, guid: 9be4a11cf26b293438d7a991f61de67a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377614432713872653, guid: 9be4a11cf26b293438d7a991f61de67a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377614432713872653, guid: 9be4a11cf26b293438d7a991f61de67a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7604458663372969228, guid: 9be4a11cf26b293438d7a991f61de67a, type: 3}
       propertyPath: m_RootOrder
