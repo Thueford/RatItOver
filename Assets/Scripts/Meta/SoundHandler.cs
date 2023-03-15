@@ -24,6 +24,7 @@ public class SoundHandler : MonoBehaviour
     }
 
     public NamedClip[] clipArray;
+    private static bool mute = false;
 
     public static Dictionary<string, AudioClip[]> clips = new Dictionary<string, AudioClip[]>();
 
@@ -39,15 +40,15 @@ public class SoundHandler : MonoBehaviour
             DontDestroyOnLoad(self = this);
         }
         else MusicSource.enabled = false;
-
+        foreach (AudioSource o in GetComponents<AudioSource>())
+            o.volume = mute ? 0 : 1;
+        
         // fill clip dict
         foreach (NamedClip c in clipArray)
         {
             if (!clips.ContainsKey(c.name))
                 clips.Add(c.name, c.clip);
         }
-
-        
     }
 
     public static void PlayClip(AudioClip c)
@@ -86,6 +87,15 @@ public class SoundHandler : MonoBehaviour
     public static void StopWalk()
     {
         self.WalkSource.Pause();
+    }
+
+    public void ToggleMute(TMPro.TextMeshProUGUI txt)
+    {
+        if (txt) txt.color = new Color(.25f, 0.13f, 0.18f, mute ? 0.2f : 1);
+        foreach (AudioSource o in GameObject.FindObjectsOfType<AudioSource>())
+        {
+            o.volume = mute ? 0 : 1;
+        }
     }
 
     //public static void SetHPTarget(float frequency) => filterHighValue = frequency;
